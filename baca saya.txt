@@ -6,6 +6,19 @@ Srandard Penamaan :
 cara pengerjaan :
 jangan commit dan push tanpa ada konfirmasi karena bisa bertabrakan.
 
+cara commit / memasukkan / mengambil data dari github di sourcetree :
+memasukkan :
+- stage all
+- namain (folder bagian apa), (V1.x.x + 1)
+- commit
+- push
+contoh :
+(V1.0.0) -> (V1.0.1) jika di anggapnya sebagai minor update
+(V1.0.0) -> (V1.1.0) jika di anggapnya sebagai major update
+
+mengambil :
+- 
+
 yang perlu di install :
 - Node JS (20.9.0 LTS) (Recommended user)
 - Composer V2.6.5
