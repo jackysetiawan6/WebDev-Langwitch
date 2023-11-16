@@ -17,7 +17,8 @@ contoh :
 (V1.0.0) -> (V1.1.0) jika di anggapnya sebagai major update
 
 mengambil :
-- 
+- Fetch
+- Pull
 
 yang perlu di install :
 - Node JS (20.9.0 LTS) (Recommended user)
