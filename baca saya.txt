@@ -1,0 +1,30 @@
+Srandard Penamaan : 
+- standard penamaan file (CamelCase)
+- standard penamaan function (PHP) (snake_case)
+- standard penamaan HTML (snake_case)
+
+cara pengerjaan :
+jangan commit dan push tanpa ada konfirmasi karena bisa bertabrakan.
+
+yang perlu di install :
+- Node JS (20.9.0 LTS) (Recommended user)
+- Composer V2.6.5
+- XAMPP 8.2.4 (PHP)
+- Git Bash 2.42.1
+- Laravel 10.x
+
+
+Git bash jika tidak bisa di download bisa menggunakan
+winget install --id Git.Git -e --source winget
+
+Note :
+
+selama pengerjaan akan terjadi bbrp perubahan di bagian XAMPP mungkin di PHP.ini dan ENV dari laravel yang butuh di rubah.
+
+Tks :)
+
+
+
+
+
+
