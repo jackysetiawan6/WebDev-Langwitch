@@ -29,6 +29,7 @@
                 justify-content: center;
             }
 
+
             .button-login {
                 display: flex;
                 align-items: center;
@@ -41,6 +42,11 @@
                 background: #342265;
                 font-family: 'Nunito', sans-serif;
                 color: #FFFFFF;
+                text-decoration: none;
+            }
+
+            .image-logo {
+                width: 100px;
             }
         </style>
     </head>
@@ -48,10 +54,10 @@
     <body>
         <div class="nav">
             <div class="image-logo">
-                <h3>image</h3>
+                <img src="{{ asset('/Image/Logo.svg') }}" alt="" class="image-logo">
             </div>
             <div class="button-login">
-                <button class="login-text"><a href="login">Login</a></button>
+                <a href="login" class="login-text">Masuk</a>
             </div>
         </div>
     </body>

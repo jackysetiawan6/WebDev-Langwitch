@@ -1,10 +1,10 @@
 <html>
-    <head>
-        <style>
 
-        </style>
+    <head>
     </head>
+
     <body>
-        <h1>tolol</h1>
+        @include('navbar')
     </body>
+
 </html>
