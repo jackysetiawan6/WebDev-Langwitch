@@ -32,7 +32,8 @@ Git bash jika tidak bisa di download bisa menggunakan
 winget install --id Git.Git -e --source winget
 
 Note :
-
+resources masukin ke sini untuk image
+Langwitch\resources\Image
 selama pengerjaan akan terjadi bbrp perubahan di bagian XAMPP mungkin di PHP.ini dan ENV dari laravel yang butuh di rubah.
 
 Tks :)
