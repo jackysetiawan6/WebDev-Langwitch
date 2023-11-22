@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.home {
+    background-color: #fff;
+    justify-content: center;
+    gap: 10px;
+}
+
+.home-container-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.image-mascot-home {
+    width: 370px;
+}
+
+.title-home {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 62px;
+    color: #060934;
+}
+
+.text-home {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: #060934;
+    width: 833px;
+    text-align: center;
+    height: 110;
+}
+
+.home-button-top {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    padding: 11px 34px 11px 34px;
+    border-radius: 30px;
+    background-color: #342265;
+    color: #fff;
+    text-decoration: none;
+}
+
+.home-container-2 {
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.text-home-container-2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.title-home-2 {
+    height: 130px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 48px;
+    line-height: 65px;
+    font-weight: 800;
+    width: 414px;
+}
+
+.text-home-2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    height: 176px;
+    line-height: 24.55px;
+    width: 383px;
+}
+
+.home-container-3 {
+    background-color: #fff;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.text-home-container-3 {
+    display: flex;
+    flex-direction: column;
+}
+
+.title-home-3 {
+    height: 130px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 48px;
+    line-height: 65px;
+    font-weight: 800;
+    width: 414px;
+}
+
+.text-home-3 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    height: 176px;
+    line-height: 24.55px;
+    width: 383px;
+}
+
+.home-container-4 {
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 40px;
+    margin-bottom: 100px;
+}
+
+.text-home-container-4 {
+    display: flex;
+    flex-direction: column;
+}
+
+.title-home-4 {
+    height: 130px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 48px;
+    line-height: 65px;
+    font-weight: 800;
+    width: 414px;
+}
+
+.text-home-4 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    height: 176px;
+    line-height: 24.55px;
+    width: 383px;
+}
