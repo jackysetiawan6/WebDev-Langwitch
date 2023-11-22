@@ -1,7 +1,7 @@
 Srandard Penamaan : 
-- standard penamaan file (CamelCase)
+- standard penamaan file PHP, CSS, JS (snake_case)
+- standard penamaan file image, video, dll (CamelCase)
 - standard penamaan function (PHP) (snake_case)
-- standard penamaan HTML (snake_case)
 
 cara pengerjaan :
 jangan commit dan push tanpa ada konfirmasi karena bisa bertabrakan.
