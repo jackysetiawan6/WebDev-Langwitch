@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+    --white-side-bg: #FFFFFF;
+    --white-bg: #FFF;
+    --dark-side-bg: #251945;
+    --dark-bg: #060934;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+.sidebar-top {
+    padding-right: 125;
+}
+
+.night-mode {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    position: fixed;
+    left: 47%;
+    top: 47px;
+}
+
+.sidebar {
+    background: var(--white-side-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 345px;
+    height: 100%;
+    z-index: 2;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(28, 28, 28, 0.064),
+        0 2px 2px rgba(28, 28, 28, 0.064),
+        0 4px 4px rgba(28, 28, 28, 0.064),
+        0 8px 8px rgba(28, 28, 28, 0.064),
+        0 16px 16px rgba(28, 28, 28, 0.064),
+        0 32px 32px rgba(28, 28, 28, 0.064);
+}
+
+.image-logo-sidebar {
+    width: 79px;
+}
+
+.list-sidebar ul {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list-sidebar ul li {
+    list-style-type: none;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-style: solid;
+    border-radius: 50px;
+    border-color: transparent;
+    height: 64px;
+    width: 260px;
+}
+
+.exit-sidebar li {
+    border-color: transparent;
+    border-style: solid;
+    border-radius: 50px;
+    height: 64px;
+    width: 260px;
+}
+
+
+.list-sidebar ul li a {
+    text-decoration: none;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 800;
+    color: #060934;
+    display: flex;
+    gap: 30px;
+}
+
+.list-sidebar ul li a img {
+    padding-left: 30px;
+}
+
+.exit-sidebar li a img {
+    padding-left: 30px;
+}
+
+.list-sidebar ul li:hover {
+    border-color: #9167E3;
+    border-style: solid;
+    border-radius: 50px;
+    height: 64px;
+    width: 260px;
+}
+
+.exit-sidebar li:hover {
+    border-color: #9167E3;
+    border-style: solid;
+    border-radius: 50px;
+    height: 64px;
+    width: 260px;
+}
+
+
+.exit-sidebar li {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.exit-sidebar li a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 800;
+    color: #060934;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
