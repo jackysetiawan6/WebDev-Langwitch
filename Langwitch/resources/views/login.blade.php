@@ -16,23 +16,24 @@
             <p class="middle-title">Masuk Akun</p>
             <div style="display: none;">
                 <img class="input-icon" src="{{ asset('images/Fullname.svg') }}"></img>
-                <input type="text" placeholder="Nama Lengkap" required>
+                <input id="fullname-input" type="text" placeholder="Nama Lengkap" required>
             </div>
             <div>
                 <img class="input-icon" src="{{ asset('images/Email.svg') }}"></img>
-                <input type="email" placeholder="Email" required>
+                <input id="email-input" type="email" placeholder="Email" required>
             </div>
             <div>
                 <img class="input-icon" src="{{ asset('images/Password.svg') }}"></img>
                 <input id="password-input" type="password" placeholder="Kata Sandi" required>
-                <img id="password-eye" class="hide-password" src="{{ asset('images/EyeOpen.svg') }}" onclick="reveal_password('password')"></img>
+                <img id="password-eye" class="hide-password" src="{{ asset('images/EyeClosed.svg') }}" onclick="reveal_password('password')"></img>
             </div>
             <div style="display: none;">
                 <img class="input-icon" src="{{ asset('images/Confirmation.svg') }}"></img>
                 <input id="confirmation-input" type="password" placeholder="Konfirmasi Kata Sandi" required>
-                <img id="confirmation-eye" class="hide-password" src="{{ asset('images/EyeOpen.svg') }}" onclick="reveal_password('confirmation')"></img>
+                <img id="confirmation-eye" class="hide-password" src="{{ asset('images/EyeClosed.svg') }}" onclick="reveal_password('confirmation')"></img>
             </div>
-            <button class="middle-button">Masuk</button>
+            <progress max="100" value="0"></progress>
+            <button class="middle-button" onclick="submit_data()">Masuk</button>
             <div class="middle-question">
                 <span>Belum punya akun? <a onclick="change_title()">Daftar</a></span>
             </div>

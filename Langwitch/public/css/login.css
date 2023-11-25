@@ -15,7 +15,8 @@
 
 .container,
 .middle,
-.middle > div {
+.middle > div,
+.indicator {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,13 +37,13 @@
     position: absolute;
     top: 30px;
     left: 30px;
+    cursor: pointer;
 }
 
 .middle {
     padding: 80px;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 30px;
-    gap: 20px;
     flex-direction: column;
     backdrop-filter: blur(3px);
 }
@@ -53,11 +54,16 @@
     margin-bottom: 20px;
 }
 
-.middle > div:not(:last-child) {
+.middle > :nth-child(2),
+.middle > :nth-child(3),
+.middle > :nth-child(4),
+.middle > :nth-child(5) {
     justify-content: left;
     align-items: center;
     border-bottom: 1px solid #000000;
+    height: 60px;
     width: 350px;
+    margin: 10px 0 0 0;
 }
 
 .middle > div > input {
@@ -76,10 +82,13 @@
 }
 
 .input-icon {
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    min-width: 35px;
+    width: 35px;
     opacity: 0.5;
-    margin-left: 5px;
+    margin: 0 0 5px 5px;
+    object-fit: contain;
+    object-position: center;
 }
 
 .hide-password {
@@ -90,16 +99,57 @@
     cursor: pointer;
 }
 
+progress {
+    appearance: none;
+    height: 10px;
+    width: 100%;
+    margin: 20px 0 0 0;
+    display: none;
+}
+
+progress::-webkit-progress-bar {
+    background: transparent;
+}
+
+progress::-webkit-progress-value {
+    background: darkred;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.strength-weak::-webkit-progress-value {
+    background: darkorange;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.strength-medium::-webkit-progress-value {
+    background: orange;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.strength-strong::-webkit-progress-value {
+    background: darkgreen;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
 .middle-button {
     height: 50px;
     width: 350px;
+    border: none;
     border-radius: 50px;
     background: #342265;
     color: #ffffff;
-    font-size: 15pt;
+    font-size: 16pt;
     font-weight: bold;
-    margin-top: 20px;
+    margin: 20px 0 20px 0;
     cursor: pointer;
+}
+
+.middle-question > span {
+    font-size: 12pt;
 }
 
 .middle-question > span > a {
