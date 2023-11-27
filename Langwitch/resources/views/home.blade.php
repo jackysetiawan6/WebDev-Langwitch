@@ -14,7 +14,7 @@
                 <p class="text-home">Dimana pembelajaran bahasa dihadirkan dalam nuansa magis! Terjunlah dalam
                     perjalanan yang memikat
                     untuk menemukan keajaiban yang tidak terduga saat Anda belajar disini!</p>
-                <a href="" class="home-button-top">Mari masuk ke jalan yang magis!</a>
+                <a href="login" class="home-button-top">Mari masuk ke jalan yang magis!</a>
             </div>
             <div class="home-container-2">
                 <img src="{{ asset('/Images/BookHome.svg') }}" alt="" class="image-book-home">
