@@ -57,24 +57,40 @@
             const modeToggleElements = document.querySelectorAll('.night-mode-toggle');
             const darkModeElement = document.querySelector('.container-content-bg');
             const darkmodesidebar = document.querySelector('.sidebar');
-            const darkmodetext = document.querySelector('.change-dark-mode');
-            const darkmodetext2 = document.querySelector('.change-dark-mode-1');
-            const darkmodetext3 = document.querySelector('.change-dark-mode-2');
-            const darkmodetext4 = document.querySelector('.change-dark-mode-3');
-            const darkmodetext5 = document.querySelector('.change-dark-mode-4');
-            const darkmodetext6 = document.querySelector('.change-dark-mode-5');
-            const borderchange = document.querySelector('.list-sidebar ul li');
+            const borderchange = document.querySelectorAll('.list-sidebar');
+
+            const sideBar = document.querySelectorAll(".list-sidebar ul li");
+            const exittext = document.querySelector('.exit-sidebar li');
+            // console.log(sideBar)
 
             const handleModeToggle = () => {
                 darkModeElement.classList.toggle('active');
                 darkmodesidebar.classList.toggle('active');
-                darkmodetext.classList.toggle('active');
-                darkmodetext2.classList.toggle('active');
-                darkmodetext3.classList.toggle('active');
-                darkmodetext4.classList.toggle('active');
-                darkmodetext5.classList.toggle('active');
-                darkmodetext6.classList.toggle('active');
-                borderchange.classList.toggle('active');
+                // borderchange.classList.toggle('active');
+                exittext.classList.toggle('active');
+                if (!sideBar[0].classList('active')) {
+                    sideBar.forEach((el) => {
+                        el.classList.add('active')
+                    })
+                } else {
+                    sideBar.forEach((el) => {
+                        console.log(el)
+                        el.classList.remove('active')
+                    })
+                }
+
+                if (!borderchange[0].classList('active')) {
+                    borderchange.forEach((element) => {
+                        element.classList.add('active')
+                    })
+                } else {
+                    borderchange.forEach((element) => {
+                        console.log(element);
+                        element.classList.remove('active')
+                    })
+                }
+
+
 
 
 
