@@ -94,17 +94,10 @@ password_input.addEventListener("input", function () {
 function submit_data() {
     if (title.innerHTML === "Masuk Akun") {
         // TODO: access database to check if email and password match
+        window.location.href = "/course";
     } else if (title.innerHTML === "Daftar Akun") {
-        if (progress.value < 100) {
-            alert(
-                "Password minimal 8 karakter dan memuat huruf kapital, non-kapital, angka, dan simbol" +
-                    "\nContoh: Password123!"
-            );
-            return;
-        }
-        if (password_input.value !== confirmation_input.value) {
-            alert("Password dan konfirmasi password tidak sama");
-            return;
-        }
+        // TODO: access database to check if email is already registered
+        // TODO: validate user's input
+        window.location.href = "/pretest";
     }
 }
