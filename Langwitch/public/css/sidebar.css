@@ -23,9 +23,8 @@ body {
     position: absolute;
     display: flex;
     height: 100%;
+    width: 100%;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
 
 }
 
@@ -33,10 +32,8 @@ body {
     padding-right: 125;
 }
 
-
 .sidebar {
     background: var(--white-bg);
-    transform: scale(1);
     transition: 1000ms ease-in-out;
     display: flex;
     flex-direction: column;
@@ -54,7 +51,6 @@ body {
 }
 
 .sidebar.active {
-    transform: scale(1);
     background: var(--dark-side-bg);
     transition: 1000ms ease-in-out;
     box-shadow: 0 1px 1px rgba(28, 28, 28, 0.064),
@@ -174,7 +170,6 @@ body {
 }
 
 .night-mode-toggle {
-    /* background-color: #060934; */
     background-image: url(../images/Moon.svg);
     position: absolute;
     right: 50px;
@@ -195,11 +190,11 @@ body {
 
 .container-content-bg {
     display: flex;
-    width: 100%;
+    width: 75%;
     height: 100%;
     transition: 1000ms ease-in-out;
     background-color: var(--white-bg);
-    padding: 88px 102px 30px 30px;
+    padding: 80px 80px 0px 60px;
 }
 
 .container-content-bg.active {

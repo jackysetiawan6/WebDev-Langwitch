@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.study-page {
+    width: 100%;
+    padding-right: 40px;
+    height: 208px;
+}
+
+.study-page h1 {
+    color: #060934;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.level-exp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.level-title {
+    display: flex;
+    flex-direction: row;
+}
+
+.level-stats {
+    background-color: #FE5C74;
+    width: 660px;
+    height: 146px;
+    border-radius: 30px;
+    align-items: center;
+    display: flex;
+}
+
+.level-stats p {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.level-stats .level-sub {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.level-stats .level-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.exp-stats {
+    display: flex;
+    background-color: #EBE0FF;
+    width: 263px;
+    height: 146px;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.exp-stats p {
+    color: #060934;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.exp-stats .exp-num {
+    color: #9167E3;
+    font-weight: 800;
+    font-size: 32px;
+}
+
+.super-title {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.course-title {
+    color: #060934;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.course-page {
+    height: 285px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+
+.course-subtitle-1,
+.course-subtitle-2 {
+    color: #060934;
+    font-size: 24px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #FFFFFF;
+    height: 97px;
+    box-shadow: 0 1px 1px rgba(28, 28, 28, 0.064),
+        0 2px 2px rgba(28, 28, 28, 0.064),
+        0 4px 4px rgba(28, 28, 28, 0.064),
+        0 8px 8px rgba(28, 28, 28, 0.064),
+        0 16px 16px rgba(28, 28, 28, 0.064),
+        0 32px 32px rgba(28, 28, 28, 0.064);
+    border-radius: 30px;
+    padding-left: 30px;
+}
+
+.course-subtitle-1.active,
+.course-subtitle-2.active {
+    background-color: #987FC5;
+    transition: 800ms ease-in-out;
+}
+
+.course-subtitle-1 p.active,
+.course-subtitle-2 p.active {
+    color: #Fff;
+    transition: 800ms ease-in-out;
+}
+
+.course-page p.active {
+    color: #Fff;
+    transition: 800ms ease-in-out;
+}
+
+.super-title h1.active {
+    color: #Fff;
+    transition: 800ms ease-in-out;
+}
