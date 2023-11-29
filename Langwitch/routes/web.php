@@ -28,3 +28,7 @@ Route::get('/course', function () {
 Route::get('/pretest', function () {
     return view('pretest');
 });
+
+Route::get('/review', function () {
+    return view('review');
+});
