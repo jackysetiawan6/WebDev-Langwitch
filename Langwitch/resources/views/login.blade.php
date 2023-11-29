@@ -34,10 +34,8 @@
             </div>
             <progress max="100" value="0"></progress>
             <button class="middle-button" onclick="submit_data()">Masuk</button>
-            {{-- href="sidebar" --}}
             <div class="middle-question">
                 <span>Belum punya akun? <a onclick="change_title()">Daftar</a></span>
-                {{-- href="pretest" --}}
             </div>
         </form>
     </div>

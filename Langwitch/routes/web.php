@@ -25,6 +25,6 @@ Route::get('/course', function () {
     return view('course');
 });
 
-Route::get('/login', function () {
-    return view('login');
+Route::get('/pretest', function () {
+    return view('pretest');
 });
