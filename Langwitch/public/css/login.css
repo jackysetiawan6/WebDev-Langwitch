@@ -54,10 +54,10 @@
     margin-bottom: 20px;
 }
 
-.middle > :nth-child(2),
-.middle > :nth-child(3),
-.middle > :nth-child(4),
-.middle > :nth-child(5) {
+#fullname,
+#email,
+#password,
+#confirmation {
     justify-content: left;
     align-items: center;
     border-bottom: 1px solid #000000;
@@ -79,6 +79,14 @@
 
 .middle > div > input::placeholder {
     color: #060934;
+}
+
+.invalid-input {
+    display: none;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    color: #ff0000;
 }
 
 .input-icon {
@@ -152,8 +160,9 @@ progress::-webkit-progress-value {
     font-size: 12pt;
 }
 
-.middle-question > span > a {
+.middle-question > a {
     cursor: pointer;
     color: #342265;
     text-decoration: underline;
+    margin-left: 5px;
 }
