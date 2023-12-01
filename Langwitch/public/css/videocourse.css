@@ -1,0 +1,8 @@
+.video-course-etc {
+    border-radius: 30px;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 80vh;
+}

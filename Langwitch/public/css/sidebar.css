@@ -87,6 +87,10 @@ body {
     border-width: 3px;
 }
 
+.list-sidebar ul li p {
+    opacity: 0.5;
+}
+
 .exit-sidebar li {
     border-color: transparent;
     border-style: solid;
@@ -134,9 +138,6 @@ body {
     width: 260px;
 }
 
-/* .list-sidebar ul li.active:hover {
-    border-color: #FFF;
-} */
 
 .exit-sidebar li:hover {
     border-color: #9167E3;
@@ -180,12 +181,11 @@ body {
     z-index: 2;
     transition: 1000ms;
     background-repeat: no-repeat;
-
 }
 
 .night-mode-toggle.active {
     background-image: url(../images/Sun.svg);
-    transition: 1000ms;
+    transition: 1000ms ease-in-out;
 }
 
 .container-content-bg {

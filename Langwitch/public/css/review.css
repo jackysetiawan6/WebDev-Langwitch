@@ -11,6 +11,7 @@
     color: #060934;
     font-size: 32px;
     font-weight: 800;
+    transition: 800ms ease-in-out;
 }
 
 .level-exp {
@@ -37,6 +38,7 @@
     color: #fff;
     font-size: 32px;
     font-weight: 800;
+    transition: 800ms ease-in-out;
 }
 
 .level-stats .level-sub {
@@ -49,6 +51,7 @@
     color: #fff;
     font-size: 24px;
     font-weight: 800;
+    transition: 800ms ease-in-out;
 }
 
 .exp-stats {
@@ -66,25 +69,28 @@
     color: #060934;
     font-size: 24px;
     font-weight: 700;
+    transition: 800ms ease-in-out;
 }
 
 .exp-stats .exp-num {
     color: #9167E3;
     font-weight: 800;
     font-size: 32px;
+    transition: 800ms ease-in-out;
 }
 
 .super-title {
     height: 60px;
     display: flex;
     justify-content: space-between;
+    transition: 800ms ease-in-out;
 }
-
 
 .course-title {
     color: #060934;
     font-size: 32px;
     font-weight: 700;
+    transition: 800ms ease-in-out;
 }
 
 .course-page {
@@ -113,6 +119,7 @@
         0 32px 32px rgba(28, 28, 28, 0.064);
     border-radius: 30px;
     padding-left: 30px;
+    transition: 1000ms ease-in-out;
 }
 
 .course-subtitle-1.active,

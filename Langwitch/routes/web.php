@@ -14,9 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('review');
+    return view('course');
 });
 
+Route::get('/videocourse', function () {
+    return view('videocourse');
+});
+Route::get('/pptcourse', function () {
+    return view('pptcourse');
+});
 Route::get('/pretest', function () {
     return view('pretest');
 });

@@ -1,0 +1,43 @@
+.video-ppt-test {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding-top: 41px;
+}
+
+.video-course-class,
+.ppt-course-class,
+.test-course-class {
+    height: 120px;
+    width: 80%;
+    box-shadow: 0 1px 1px rgba(92, 92, 92, 0.064),
+        0 2px 2px rgba(92, 92, 92, 0.064),
+        0 4px 4px rgba(92, 92, 92, 0.064),
+        0 8px 8px rgba(92, 92, 92, 0.064),
+        0 16px 16px rgba(92, 92, 92, 0.064);
+    align-items: center;
+    display: flex;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #060934;
+}
+
+.inside-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.inside-box img {
+    padding: 0 30px;
+}
+
+.inside-box p {
+    font-size: 24px;
+    font-weight: 600;
+
+}
