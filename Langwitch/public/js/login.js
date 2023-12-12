@@ -301,8 +301,19 @@ function hide_password(input_id) {
 
 function validate() {
     if (title.innerHTML === "Masuk Akun") {
-        localStorage.setItem("logged_profile", email_input.value);
-        window.location.href = "/";
+        // Find user in database into result
+        if (email_input.value === "") {
+            email_invalid.style.display = "block";
+            email_invalid.innerHTML = "Email harus diisi.";
+            invalid_input(email);
+            return;
+        }
+        if (password_input.value === "") {
+            password_invalid.style.display = "block";
+            password_invalid.innerHTML = "Password harus diisi.";
+            invalid_input(password);
+            return;
+        }
     } else {
         if (fullname_input.value === "") {
             fullname_invalid.style.display = "block";
@@ -328,7 +339,7 @@ function validate() {
             invalid_input(confirmation);
             return;
         }
-        localStorage.setItem("logged_profile", email_input.value);
-        window.location.href = "/pretest";
+        // Register user into database
+        //s
     }
 }
