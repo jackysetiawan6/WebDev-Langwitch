@@ -28,3 +28,11 @@
     justify-content: center;
     display: flex;
 }
+
+.video-title-for-vids-course {
+    font-size: 24px;
+    font-weight: 600;
+    color: #FFF;
+    justify-content: center;
+    display: flex;
+}

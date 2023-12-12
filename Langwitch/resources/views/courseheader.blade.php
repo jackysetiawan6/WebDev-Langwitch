@@ -14,7 +14,7 @@
         <div class="course-header">
             <div>
                 <div class="cross-close">
-                    <a href=""><img src="{{ asset('/Images/close.svg') }}" alt="" class="image-book-home"></a>
+                    <a href="review"><img src="{{ asset('/Images/close.svg') }}" alt="" class="image-book-home"></a>
                 </div>
             </div>
             <div class="title-move">
