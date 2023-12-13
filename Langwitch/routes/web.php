@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Users;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +25,11 @@ Route::get('/course', function () {
 Route::get('/videocourse', function () {
     return view('videocourse');
 });
+
 Route::get('/pptcourse', function () {
     return view('pptcourse');
 });
+
 Route::get('/pretest', function () {
     return view('pretest');
 });
@@ -35,6 +38,8 @@ Route::get('/review', function () {
     return view('review');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/login', [Users::class, 'login']);
+Route::post('/login-success', [Users::class, 'login_user'])->name('login-success');
+
+Route::get('/register', [Users::class, 'register']);
+Route::post('/register-success', [Users::class, 'register_user'])->name('register-success');
