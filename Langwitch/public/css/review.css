@@ -120,6 +120,7 @@
     border-radius: 30px;
     padding-left: 30px;
     transition: 1000ms ease-in-out;
+    text-decoration: none;
 }
 
 .course-subtitle-1.active,
@@ -142,4 +143,11 @@
 .super-title h1.active {
     color: #Fff;
     transition: 800ms ease-in-out;
+}
+
+.inside-box {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }

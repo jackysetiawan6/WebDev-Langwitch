@@ -2,10 +2,10 @@
 <html lang="en">
 
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Langwitch - Learn languages by yourself</title>
+        <link rel="shortcut icon" href="{{ asset('images/Logo.svg') }}" type="image/x-icon" />
         <link rel="stylesheet" href="{{ asset('css/review.css') }}">
     </head>
 
@@ -38,14 +38,22 @@
                     </div>
                     <div class="course-page">
                         <p class="course-title">Course 1 : Vocabulary</p>
-                        <div class="course-subtitle-1">
-                            <img src="{{ asset('/Images/videoplayer.svg') }}" alt="" class="logo-list">
-                            <p>&nbsp;Video Pembelajaran</p>
-                        </div>
-                        <div class="course-subtitle-2">
-                            <img src="{{ asset('/Images/videoscreen.svg') }}" alt="" class="logo-list">
-                            <p>&nbsp;Power Point Penjelasan</p>
-                        </div>
+                        <a href="course" class="course-subtitle-2">
+                            <div>
+                                <div class="inside-box">
+                                    <img src="{{ asset('/Images/videoplayer.svg') }}" alt="" class="logo-list">
+                                    <p>Video Pembelajaran</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="pptcourse" class="course-subtitle-2">
+                            <div>
+                                <div class="inside-box">
+                                    <img src="{{ asset('/Images/videoscreen.svg') }}" alt="" class="logo-list">
+                                    <p>Power Point Penjelasan</p>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

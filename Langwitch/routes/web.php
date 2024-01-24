@@ -38,6 +38,13 @@ Route::get('/review', function () {
     return view('review');
 });
 
+Route::get('/papanskor', function () {
+    return view('papanskor');
+});
+
+Route::get('/belajar', function () {
+    return view('belajar');
+});
 Route::get('/login', [Users::class, 'login']);
 Route::post('/login-success', [Users::class, 'login_user'])->name('login-success');
 
