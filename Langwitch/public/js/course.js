@@ -21,8 +21,8 @@ const handleModeToggle = () => {
     nightmodecourse2.classList.toggle('active');
     nightmodecoursetext.classList.toggle('active');
     nightmodecoursetext2.classList.toggle('active');
-    nightmodetitle.classList.toggle('active')
-    nightmodetitle2.classList.toggle('active')
+    nightmodetitle.classList.toggle('active');
+    nightmodetitle2.classList.toggle('active');
     modeToggleElements.forEach((element) => element.classList.toggle('active'));
     exittext.classList.toggle('active');
     if (!sideBar[0].classList('active')) {

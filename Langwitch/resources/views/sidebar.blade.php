@@ -14,27 +14,27 @@
             <div class="list-sidebar">
                 <ul>
                     <li>
-                        <a href="belajar"><img src="{{ asset('/Images/BookShiny.svg') }}" alt="" class="logo-list">
+                        <a href="review"><img src="{{ asset('/Images/BookShiny.svg') }}" alt="" class="logo-list">
                             <p class="change-dark-mode">Belajar</p>
                         </a>
                     </li>
                     <li>
-                        <a href=""><img src="{{ asset('/Images/LeaderBoardLogo.svg') }}" alt="" class="logo-list">
+                        <a href="papanskor"><img src="{{ asset('/Images/LeaderBoardLogo.svg') }}" alt="" class="logo-list">
                             <p class="change-dark-mode-1">Papan Skor</p>
                         </a>
                     </li>
                     <li>
-                        <a href=""><img src="{{ asset('/Images/Messages.svg') }}" alt="" class="logo-list">
+                        <a href="diskusi"><img src="{{ asset('/Images/Messages.svg') }}" alt="" class="logo-list">
                             <p class="change-dark-mode-2">Diskusi</p>
                         </a>
                     </li>
                     <li>
-                        <a href=""><img src="{{ asset('/Images/HumanProfile.svg') }}" alt="" class="logo-list">
+                        <a href="profile"><img src="{{ asset('/Images/HumanProfile.svg') }}" alt="" class="logo-list">
                             <p class="change-dark-mode-3">Profil</p>
                         </a>
                     </li>
                     <li>
-                        <a href=""><img src="{{ asset('/Images/Translate.svg') }}" alt="" class="logo-list">
+                        <a href="terjemahan"><img src="{{ asset('/Images/Translate.svg') }}" alt="" class="logo-list">
                             <p class="change-dark-mode-4">Terjemahan</p>
                         </a>
                     </li>

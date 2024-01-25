@@ -22,6 +22,19 @@ Route::get('/course', function () {
     return view('course');
 });
 
+
+Route::get('/pretest', function () {
+    return view('pretest');
+});
+
+// sidebar linker
+
+Route::get('/review', function () {
+    return view('review');
+});
+
+// review linker
+
 Route::get('/videocourse', function () {
     return view('videocourse');
 });
@@ -30,21 +43,25 @@ Route::get('/pptcourse', function () {
     return view('pptcourse');
 });
 
-Route::get('/pretest', function () {
-    return view('pretest');
-});
-
-Route::get('/review', function () {
-    return view('review');
-});
+// end of review linker
 
 Route::get('/papanskor', function () {
     return view('papanskor');
 });
 
-Route::get('/belajar', function () {
-    return view('belajar');
+Route::get('/diskusi', function () {
+    return view('diskusi');
 });
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/terjemahan', function () {
+    return view('translate');
+});
+// end of sidebar linker
+
 Route::get('/login', [Users::class, 'login']);
 Route::post('/login-success', [Users::class, 'login_user'])->name('login-success');
 
