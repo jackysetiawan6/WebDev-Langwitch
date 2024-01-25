@@ -10,6 +10,11 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    gap: 15px;
+}
+
+.leaderboard {
+    gap: 15px;
 }
 
 .name {
@@ -19,10 +24,12 @@
 }
 
 .classes {
-    color: #060934;
+    color: rgba(6, 9, 34, 0.56);
     font-size: 16px;
     font-weight: 700;
-    opacity: 56%;
+    display: flex;
+    justify-content: space-between;
+
 }
 
 .experience {
@@ -37,9 +44,21 @@
     font-size: 32px;
     font-weight: 700;
     opacity: 56%;
+    display: flex;
+    align-items: center;
+    width: 45px;
+    justify-content: center;
 }
 
 .packet {
     display: flex;
     flex-direction: column;
+}
+
+.leaderboard {
+    display: flex;
+}
+
+.listed {
+    width: 100%;
 }

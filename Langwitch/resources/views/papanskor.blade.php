@@ -18,15 +18,17 @@
                     <div>
                         <p class="title">Papan Skor</p>
                     </div>
-                    <div class="leaderboard">
-                        @foreach ($User as $user)
+                    @foreach ($User as $user)
+                        <div class="leaderboard">
                             <div class="id">{{ $user['id'] }}</div>
-                            {{-- <div class="profile"></div> --}}
-                            <div class="name">{{ $user['fullname'] }}</div>
-                            {{-- <div class="classes">{{$user['id']}}</div> --}}
-                            {{-- <div class="experience">{{ $user['id'] }}</div> --}}
-                        @endforeach
-                    </div>
+                            <div class="profile"><img src="{{ asset('/Images/profpic.svg') }}" alt=""></div>
+                            <div class="listed">
+                                <div class="name">{{ $user['fullname'] }}</div>
+                                <div class="classes">[witch] <p class="experience">14506 XP</p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
             <script type="text/javascript" src="{{ asset('js/course.js') }}"></script>
