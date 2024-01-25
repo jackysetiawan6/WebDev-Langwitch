@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
-
+use App\Http\Controllers\LeaderboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -67,3 +67,5 @@ Route::post('/login-success', [Users::class, 'login_user'])->name('login-success
 
 Route::get('/register', [Users::class, 'register']);
 Route::post('/register-success', [Users::class, 'register_user'])->name('register-success');
+
+Route::get('papanskor',[LeaderboardController::class,'show']);

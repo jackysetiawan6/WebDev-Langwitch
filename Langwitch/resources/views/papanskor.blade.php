@@ -14,8 +14,19 @@
         <div class="container">
             @include('sidebar')
             <div class="container-content-bg">
-                <div>
-                    <p class="title">Papan Skor</p>
+                <div class="cont-leaderboard">
+                    <div>
+                        <p class="title">Papan Skor</p>
+                    </div>
+                    <div class="leaderboard">
+                        @foreach ($User as $user)
+                            <div class="id">{{ $user['id'] }}</div>
+                            {{-- <div class="profile"></div> --}}
+                            <div class="name">{{ $user['fullname'] }}</div>
+                            {{-- <div class="classes">{{$user['id']}}</div> --}}
+                            {{-- <div class="experience">{{ $user['id'] }}</div> --}}
+                        @endforeach
+                    </div>
                 </div>
             </div>
             <script type="text/javascript" src="{{ asset('js/course.js') }}"></script>
