@@ -15,7 +15,7 @@
             @include('sidebar')
             <div class="container-content-bg">
                 <div class="cont-leaderboard">
-                    <div>
+                    <div class="bordering">
                         <p class="title">Papan Skor</p>
                     </div>
                     @foreach ($User as $user)

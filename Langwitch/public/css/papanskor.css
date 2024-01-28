@@ -62,3 +62,7 @@
 .listed {
     width: 100%;
 }
+
+.bordering {
+    border-bottom: 2px black solid;
+}
