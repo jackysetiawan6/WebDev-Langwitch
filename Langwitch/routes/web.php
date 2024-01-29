@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
 use App\Http\Controllers\LeaderboardController;
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,10 +64,10 @@ Route::get('/terjemahan', function () {
 });
 // end of sidebar linker
 
-Route::get('/login', [Users::class, 'login']);
-Route::post('/login-success', [Users::class, 'login_user'])->name('login-success');
+Route::get('/login', [UserController::class, 'login']);
+Route::post('/login-success', [UserController::class, 'login_user'])->name('login-success');
 
-Route::get('/register', [Users::class, 'register']);
-Route::post('/register-success', [Users::class, 'register_user'])->name('register-success');
+Route::get('/register', [UserController::class, 'register']);
+Route::post('/register-success', [UserController::class, 'register_user'])->name('register-success');
 
-Route::get('papanskor',[LeaderboardController::class,'show']);
+Route::get('papanskor', [LeaderboardController::class, 'show']);

@@ -16,6 +16,10 @@ return new class extends Migration
             $table->string('fullname');
             $table->string('email');
             $table->string('password');
+            $table->integer('exp')->default(0);
+            $table->integer('streak')->default(0);
+            $table->string('badge')->default('rookie');
+            $table->string('avatar')->default('default.svg');
             $table->timestamps();
         });
     }

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use Hash;
 
-class Users extends Controller
+class UserController extends Controller
 {
     public function login()
     {
