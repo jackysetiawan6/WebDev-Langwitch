@@ -13,7 +13,9 @@
         <div class="container">
             @include('sidebar')
             <div class="container-content-bg">
-                <div></div>
+                <div>
+                    
+                </div>
             </div>
             <script type="text/javascript" src="{{ asset('js/course.js') }}"></script>
         </div>
