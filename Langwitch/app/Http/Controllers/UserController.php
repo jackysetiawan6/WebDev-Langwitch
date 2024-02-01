@@ -22,7 +22,7 @@ class UserController extends Controller
         if ($user) {
             if (Hash::check(md5($request->input('password')), $user->password)) {
                 $request->session()->put('loginId', $user->id);
-                return redirect('')->with('success', 'Login berhasil');
+                return redirect('review')->with('success', 'Login berhasil');
             } else {
                 return redirect()->back()->with('error', 'Password salah');
             }
@@ -60,5 +60,10 @@ class UserController extends Controller
         } else {
             return redirect()->back()->with('error', 'Akun gagal dibuat');
         }
+    }
+    public function logout_user()
+    {
+        session()->forget('loginId');
+        return redirect('/');
     }
 }

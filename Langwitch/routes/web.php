@@ -69,6 +69,8 @@ Route::post('/login-success', [UserController::class, 'login_user'])->name('logi
 Route::get('/register', [UserController::class, 'register']);
 Route::post('/register-success', [UserController::class, 'register_user'])->name('register-success');
 
+Route::get('/logout-success', [UserController::class, 'logout_user'])->name('logout_success');
+
 Route::get('papanskor', [LeaderboardController::class, 'show']);
 
 // Route::get('/diskusi', [DiscussionController::class, 'Discussion']);
