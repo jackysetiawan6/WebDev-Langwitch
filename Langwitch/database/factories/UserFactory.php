@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Hash;
+// use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 /**
@@ -18,7 +18,16 @@ class UserFactory extends Factory
      *
      * @return array<string, mixed>
      */
-
+    public function definition()
+    {
+        return [
+            'fullname'=>$this->faker->fullname,
+            'email'=>$this->faker->email
+            // 'exp'=>$this->faker->exp,
+            // 'streak'=>$this->faker->streak,
+            // 'badge'=>$this->faker->badge
+        ];
+    }
 
     // /**
     //  * Indicate that the model's email address should be unverified.
