@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use Hash;
 
@@ -56,6 +55,7 @@ class UserController extends Controller
         $user->password = Hash::make(md5($password));
         $res = $user->save();
         if ($res) {
+            $request->session()->put('loginId', $user->id);
             return redirect('/pretest')->with('success', 'Akun berhasil dibuat');
         } else {
             return redirect()->back()->with('error', 'Akun gagal dibuat');

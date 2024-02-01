@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
 use App\Http\Controllers\LeaderboardController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PretestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,10 +25,7 @@ Route::get('/course', function () {
     return view('course');
 });
 
-
-Route::get('/pretest', function () {
-    return view('pretest');
-});
+Route::get('/pretest', [PretestController::class, 'pretest']);
 
 // sidebar linker
 

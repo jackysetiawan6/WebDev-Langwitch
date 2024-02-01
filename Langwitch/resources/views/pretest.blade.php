@@ -32,14 +32,14 @@
         <div id="part-rookie" class="panel success">
             <img class="mascot" src="{{ asset('images/Mascot.svg') }}" alt="Mascot">
             <div class="panel-container">
-                <p class="title">Selamat Datang di Langwitch<br>Rookie Jennifer!</p>
+                <p class="title">Selamat Datang di Langwitch<br>Rookie {{ $fullname; }}!</p>
                 <button class="button-01">Jelajahi Langwitch!</button>
             </div>
         </div>
         <div id="part-level" class="panel success">
             <img class="mascot" src="{{ asset('images/Mascot.svg') }}" alt="Mascot">
             <div class="panel-container">
-                <p class="title">Selamat Datang di Langwitch<br>Level Jennifer!</p>
+                <p class="title">Selamat Datang di Langwitch<br>Level {{ $fullname; }}!</p>
                 <button class="button-01">Jelajahi Langwitch!</button>
             </div>
         </div>
