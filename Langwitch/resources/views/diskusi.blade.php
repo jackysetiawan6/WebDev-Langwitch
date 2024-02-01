@@ -17,15 +17,17 @@
             <div class="container-content-bg">
                 <div class="diskusi-container">
                     <p class="new-post">New Post</p>
-                    <div class="text-button">
+                    <form class="text-button" method="post" action="{{ route('diskusi-store') }}" enctype="multipart/form-data">
+                        @csrf
                         <div class="text">
-                            <input type="text" placeholder="Type a text" id="finasim">
-                            <input type="file" name="" id="file-input" accept="image/*" onchange="previewImage();">
+                            <input type="text" placeholder="Type a text" id="finasim" name="text">
+                            <input type="file" name="" id="file-input" accept="image/*" onchange="previewImage();" name="image">
                             <img id="preview">
                             <label for="file-input" id="file-input-label"><img src="{{ asset('images/attachment.png') }}" alt=""></label>
                         </div>
-                        <button class="button-post">Post</button>
-                    </div>
+                        <button type="submit" class="button-post">Post</button>
+                    </form>
+
                 </div>
             </div>
             <script type="text/javascript" src="{{ asset('js/course.js') }}"></script>

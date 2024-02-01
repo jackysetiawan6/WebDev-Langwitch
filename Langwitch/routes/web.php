@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
 use App\Http\Controllers\LeaderboardController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DiscussionController;
 use App\Http\Controllers\PretestController;
 
 /*
@@ -69,3 +70,9 @@ Route::get('/register', [UserController::class, 'register']);
 Route::post('/register-success', [UserController::class, 'register_user'])->name('register-success');
 
 Route::get('papanskor', [LeaderboardController::class, 'show']);
+
+// Route::get('/diskusi', [DiscussionController::class, 'Discussion']);
+// Route::post('/diskusi-store', [DiscussionController::class, 'discussion_store'])->name('diskusi-store');
+
+Route::post('/diskusi-store', [DiscussionController::class, 'store'])->name('diskusi-store');
+Route::get('/diskusi', [DiscussionController::class, 'Discussion'])->name('diskusi');

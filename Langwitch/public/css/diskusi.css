@@ -65,6 +65,8 @@ input {
     height: 41px;
     color: #fff;
     border-radius: 15px;
+    opacity: 100%;
+    cursor: pointer;
 }
 
 #file-input {

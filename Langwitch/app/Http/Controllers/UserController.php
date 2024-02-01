@@ -22,7 +22,7 @@ class UserController extends Controller
         if ($user) {
             if (Hash::check(md5($request->input('password')), $user->password)) {
                 $request->session()->put('loginId', $user->id);
-                return redirect('/')->with('success', 'Login berhasil');
+                return redirect('')->with('success', 'Login berhasil');
             } else {
                 return redirect()->back()->with('error', 'Password salah');
             }
