@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('live')->default(3);
             $table->integer('streak')->default(0);
             $table->string('badge')->default('rookie');
-            $table->string('avatar')->default('public/images/logo.svg');
+            $table->string('avatar')->default('logo.svg');
             $table->timestamps();
         });
 
