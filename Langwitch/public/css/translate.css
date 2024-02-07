@@ -1,0 +1,78 @@
+.translator-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.h1-mod {
+    font-size: 32px;
+    font-weight: 800;
+    padding-bottom: 16px;
+}
+
+.slator-mod {
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    align-items: center;
+    display: flex;
+}
+
+.slator-mod-img {
+    width: 27px;
+}
+
+.input-translate-mod {
+    margin-top: 10px;
+    /* width: 817px; */
+    height: 86px;
+    background-color: #F5F0FF;
+    border-radius: 20px;
+    border: none;
+    font-size: 18px;
+    outline: none;
+    width: 80%;
+    margin-right: 33px;
+    padding-left: 15px;
+    font-weight: 700;
+}
+
+.button-translate-mod {
+    font-size: 18px;
+    color: white;
+    font-size: 700;
+    background-color: #342265;
+    border: none;
+    border-radius: 15px;
+    width: 110px;
+    height: 41px;
+}
+
+.slator-mod-secondary {
+    color: #000;
+    font-size: 18px;
+    font-weight: 800;
+    display: flex;
+    margin-top: 20px;
+}
+
+.mplek {
+    margin-top: 10px;
+    height: 86px;
+    background-color: #E4D9F8;
+    border-radius: 20px;
+    border: none;
+    font-size: 18px;
+    outline: none;
+    width: 80%;
+    margin-right: 33px;
+    padding-left: 15px;
+    margin-top: 61px;
+}
+
+.trans-result {
+    font-size: 18px;
+    color: #000000;
+    font-weight: 600;
+}
