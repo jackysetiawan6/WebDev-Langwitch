@@ -8,46 +8,53 @@ use App\Models\Discussion;
 
 class DiscussionController extends Controller
 {
-    public function Discussion()
+    function showtext()
+    {
+        $discussion = Discussion::all();
+        return view('diskusi', ['Discussion' => $discussion]);
+    }
+
+    public function DiscussionShow()
     {
         return view('diskusi');
     }
 
-//     public function store(Request $request)
+    public function store(Request $request)
+{
+    $request->validate([
+        'text' => 'required'
+        // 'image' => 'required|image|mimes:png,jpg,jpeg|max:2048'
+    ]);
+    // $text = $request->input('text');
+    $discussion = new Discussion;
+    $discussion->text = $request->text;
+
+    $discussion->save();
+
+    return redirect()->route('diskusi-show')->with('success', 'Pesan berhasil dikirimkan');
+}
+
+
+// public function store(Request $request)
 // {
 //     $request->validate([
-//         'text' => 'required'
-//         // 'image' => 'required|image|mimes:png,jpg,jpeg|max:2048'
+//         'text' => 'required',
+//         'image' => 'required|image|mimes:png,jpg,jpeg|max:2048'
 //     ]);
-//     // $text = $request->input('text');
+
 //     $discussion = new Discussion;
 //     $discussion->text = $request->text;
+
+//     if($request->hasFile('image')) {
+//         $image = $request->file('image');
+//         $filename = time() . '.' . $image->getClientOriginalExtension();
+//         $filePath = $image->storeAs('uploads', $filename, 'public');
+//         $discussion->image_path = '/storage/' . $filePath;
+//     }
 
 //     $discussion->save();
 
 //     return redirect()->route('diskusi')->with('success', 'Pesan berhasil dikirimkan');
 // }
-
-public function store(Request $request)
-{
-    $request->validate([
-        'text' => 'required',
-        'image' => 'required|image|mimes:png,jpg,jpeg|max:2048'
-    ]);
-
-    $discussion = new Discussion;
-    $discussion->text = $request->text;
-
-    if($request->hasFile('image')) {
-        $image = $request->file('image');
-        $filename = time() . '.' . $image->getClientOriginalExtension();
-        $filePath = $image->storeAs('uploads', $filename, 'public');
-        $discussion->image_path = '/storage/' . $filePath;
-    }
-
-    $discussion->save();
-
-    return redirect()->route('diskusi')->with('success', 'Pesan berhasil dikirimkan');
-}
 }
 

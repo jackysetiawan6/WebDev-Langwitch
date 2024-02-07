@@ -73,9 +73,10 @@ Route::post('/register-success', [UserController::class, 'register_user'])->name
 Route::get('/logout-success', [UserController::class, 'logout_user'])->name('logout_success');
 
 Route::get('papanskor', [LeaderboardController::class, 'show']);
-
+// Route::get('diskusi', [LeaderboardController::class, 'show']);
+Route::get('diskusi', [DiscussionController::class, 'showtext']);
 // Route::get('/diskusi', [DiscussionController::class, 'Discussion']);
 // Route::post('/diskusi-store', [DiscussionController::class, 'discussion_store'])->name('diskusi-store');
 
 Route::post('/diskusi-store', [DiscussionController::class, 'store'])->name('diskusi-store');
-Route::get('/diskusi', [DiscussionController::class, 'Discussion'])->name('diskusi');
+Route::get('/diskusi-show', [DiscussionController::class, 'DiscussionShow'])->name('diskusi-show');

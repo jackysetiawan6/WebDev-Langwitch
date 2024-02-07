@@ -1,7 +1,7 @@
 .diskusi-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 95%;
     height: 151px;
     border-radius: 10px;
     padding: 40px 40px 0px 40px;
@@ -86,4 +86,75 @@ input {
 #preview {
     width: 385px;
     height: 243px;
+}
+
+.discussion-other-contain {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: auto;
+    border-radius: 10px;
+    padding: 40px 40px 40px 40px;
+    box-shadow:
+        2.8px 2.3px 7.7px -3px rgba(0, 0, 0, 0.062),
+        5.2px 4.4px 14.6px -3px rgba(0, 0, 0, 0.085),
+        7.4px 6.3px 21.1px -3px rgba(0, 0, 0, 0.104),
+        9.9px 8.3px 28.1px -3px rgba(0, 0, 0, 0.128),
+        13.8px 11.6px 38.6px -3px rgba(0, 0, 0, 0.164),
+        26px 22px 80px -3px rgba(0, 0, 0, 0.22);
+    gap: 14px;
+    margin-top: 32px;
+}
+
+.text-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.text-2 {
+    background-color: #D9D9D9;
+    /* border: 1px black solid; */
+    border-radius: 20px;
+    width: 82%;
+    height: auto;
+    padding: 20px 30px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #000;
+    opacity: 50%;
+    align-items: center;
+}
+
+.prof-name {
+    display: flex;
+}
+
+.name-disc {
+    color: #9167E3;
+    font-size: 24px;
+    font-weight: 800;
+    display: flex;
+}
+
+.rank-disc {
+    color: #060934;
+    font-size: 16px;
+    opacity: 57%;
+    font-weight: 800;
+}
+
+.time-disc {
+    color: #000;
+    opacity: 50%;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+.container-all {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    gap: 27px;
 }
