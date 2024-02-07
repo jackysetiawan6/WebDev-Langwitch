@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Users;
 use App\Http\Controllers\LeaderboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DiscussionController;
@@ -62,6 +61,8 @@ Route::get('/terjemahan', function () {
     return view('translate');
 });
 // end of sidebar linker
+
+Route::get('/profile-image', [UserController::class, 'get_profile_image'])->name('profile-image');
 
 Route::get('/login', [UserController::class, 'login']);
 Route::post('/login-success', [UserController::class, 'login_user'])->name('login-success');

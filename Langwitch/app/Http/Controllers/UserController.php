@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    public function get_profile_image()
+    {
+        $user = User::find(session()->get('loginId'));
+        $imagePath = '/images/' . $user->avatar;
+        return response()->file(public_path($imagePath));
+    }
     public function login()
     {
         return view('login');
@@ -64,6 +70,7 @@ class UserController extends Controller
     public function logout_user()
     {
         session()->forget('loginId');
+        session()->invalidate();
         return redirect('/');
     }
 }

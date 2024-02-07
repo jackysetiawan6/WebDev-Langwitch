@@ -1,0 +1,41 @@
+.profile-top {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-right: 40px;
+}
+
+.profile-top {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.profile-top-left {
+    flex-direction: column;
+}
+
+.profile-name {
+    font-size: 32px;
+    font-weight: 800;
+    color: #060934;
+}
+
+.profile-username {
+    font-size: 16px;
+    font-weight: 600;
+    color: #060934;
+    opacity: 50%;
+}
+
+.profile-rank {
+    font-size: 14px;
+    font-weight: 800;
+    color: #9167e3;
+}
+
+.profile-picture {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    background-color: gray;
+}

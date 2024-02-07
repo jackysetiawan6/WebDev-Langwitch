@@ -31,11 +31,11 @@ return new class extends Migration
             'fullname' => 'Tester Account',
             'email' => 'tester@se.id',
             'password' => Hash::make(md5('password')),
-            'exp' => 999999,
+            'exp' => 99999,
             'live' => 3,
             'streak' => 365,
-            'badge' => 'rookie',
-            'avatar' => 'public/images/logo.svg',
+            'badge' => 'admin',
+            'avatar' => 'logo.svg',
             'created_at' => '2023-11-25 10:30:59',
             'updated_at' => now()
         ]);
