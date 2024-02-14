@@ -11,7 +11,11 @@
 </head>
 
 <body>
-
+    @if (!session()->has('loginId'))
+    <script>
+        window.location.href = '/login';
+    </script>
+    @endif
     @include('courseheader')
     <div class="video-ppt-test">
         <a href="videocourse" class="video-course-class">
