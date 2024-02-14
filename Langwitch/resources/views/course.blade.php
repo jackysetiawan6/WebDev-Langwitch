@@ -30,7 +30,7 @@
                 </div>
             </div>
         </a>
-        <a href="" class="test-course-class">
+        <a href="testcoursefirst" class="test-course-class">
             <div>
                 <div class="inside-box">
                     <img src="{{ asset('/Images/Test.svg') }}" alt="" class="logo-list">
