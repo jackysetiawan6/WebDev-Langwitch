@@ -18,17 +18,11 @@
         @endif
         @include('sidebar')
         <div class="container-content-bg">
-            <div class="profile-top">
-                <div class="profile-top-left">
-                    <p class="profile-name">Name</p>
-                    <p class="profile-username">Username</p>
-                    <p class="profile-rank">[Rank]</p>
-                </div>
-                <img class="profile-picture" src="{{ route('profile-image') }}" alt="Logo" class="logo" />
-                <div class="heart-level">
-                    <img src="http://127.0.0.1:8000/Images/heart.svg" alt="" class="logo-list">
-                    <img src="http://127.0.0.1:8000/Images/heart.svg" alt="" class="logo-list">
-                    <img src="http://127.0.0.1:8000/Images/heart.svg" alt="" class="logo-list">
+            <div class="container">
+                <div class="profile-container">
+                    <div class="profile-image">
+                        <img src="{{ route('profile-image') }}" alt="Profile Image" />
+                    </div>
                 </div>
             </div>
         </div>
