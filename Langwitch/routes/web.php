@@ -62,6 +62,14 @@ Route::get('/terjemahan', function () {
 });
 // end of sidebar linker
 
+
+// course linker
+
+Route::get('/testcoursefirst', function () {
+    return view('testcoursefirst');
+});
+
+// end of course linker
 Route::get('/profile-image', [UserController::class, 'get_profile_image'])->name('profile-image');
 
 Route::get('/login', [UserController::class, 'login']);
