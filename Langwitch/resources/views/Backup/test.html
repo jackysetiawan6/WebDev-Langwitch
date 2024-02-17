@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <div class="slide-v">
+        <div class="slide"> 0 </div>
+        <div class="slide"> 1 </div>
+        <div class="slide"> 2 </div>
+        <div class="slide"> 3 </div>
+    </div>
+
+    <div class="button-container">
+        <button class="prev">Prev</button>
+        <button class="next">Next</button>
+    </div>
+    <script>
+        class SlideV {
+            constructor() {
+                this.slides = document.querySelectorAll('.slide')
+                this.currentSlide = 0
+                this.showSlide(this.currentSlide)
+            }
+
+            next() {
+                this.currentSlide++
+                if (this.currentSlide >= this.slides.length) {
+                    this.currentSlide = 0
+                }
+                this.showSlide(this.currentSlide)
+            }
+
+            prev() {
+                this.currentSlide--
+                if (this.currentSlide < 0) {
+                    this.currentSlide = this.slides.length - 1
+                }
+                this.showSlide(this.currentSlide)
+            }
+
+            showSlide(index) {
+                this.slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.style.display = 'block'
+                    } else {
+                        slide.style.display = 'none'
+                    }
+                })
+            }
+        }
+
+        const mySlideV = new SlideV()
+
+        const next = document.querySelector('.next')
+        const prev = document.querySelector('.prev')
+
+        next.addEventListener('click', () => { mySlideV.next() })
+        prev.addEventListener('click', () => { mySlideV.prev() })
+    </script>
+</body>
+
+</html>

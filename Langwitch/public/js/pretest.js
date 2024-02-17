@@ -61,7 +61,7 @@ rookie_button_01.addEventListener("click", () => {
 });
 
 level_button_01.addEventListener("click", () => {
-    alert("Lanjut ke course aja");
+    window.location.href = "/review";
 });
 
 pass_button_01.addEventListener("click", () => {
