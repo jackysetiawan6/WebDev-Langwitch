@@ -53,9 +53,7 @@ Route::get('/diskusi', function () {
     return view('diskusi');
 });
 
-Route::get('/profile', function () {
-    return view('profile');
-});
+Route::get('/profile', [UserController::class, 'profile']);
 
 Route::get('/terjemahan', function () {
     return view('translate');
@@ -70,7 +68,6 @@ Route::get('/testcoursefirst', function () {
 });
 
 // end of course linker
-Route::get('/profile-image', [UserController::class, 'get_profile_image'])->name('profile-image');
 
 Route::get('/login', [UserController::class, 'login']);
 Route::post('/login-success', [UserController::class, 'login_user'])->name('login-success');

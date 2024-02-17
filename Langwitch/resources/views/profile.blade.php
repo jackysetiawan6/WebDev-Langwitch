@@ -18,10 +18,27 @@
         @endif
         @include('sidebar')
         <div class="container-content-bg">
-            <div class="container">
+            <div class="container-new">
                 <div class="profile-container">
+                    <div class="profile-detail">
+                        <p class="fullname">{{ $user->fullname }}</p>
+                        <p class="email">{{ $user->email }}</p>
+                        <p class="badge">[{{ $user->badge }}]</p>
+                    </div>
                     <div class="profile-image">
-                        <img src="{{ route('profile-image') }}" alt="Profile Image" />
+                        <img src="{{ $user->avatar }}" alt="Profile Image" />
+                    </div>
+                    <div class="heart-level">
+                        <img src="{{ asset('/Images/heart.svg') }}" alt="" class="logo-list">
+                        <img src="{{ asset('/Images/heart.svg') }}" alt="" class="logo-list">
+                        <img src="{{ asset('/Images/heart.svg') }}" alt="" class="logo-list">
+                    </div>
+                </div>
+                <div class="info-container">
+                    <div class="panel bigger"></div>
+                    <div class="info-right">
+                        <div class="panel"></div>
+                        <div class="panel"></div>
                     </div>
                 </div>
             </div>

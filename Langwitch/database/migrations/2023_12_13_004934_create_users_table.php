@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('live')->default(3);
             $table->integer('streak')->default(0);
             $table->string('badge')->default('rookie');
-            $table->string('avatar')->default('logo.svg');
+            $table->string('avatar')->default('/images/logo.svg');
             $table->timestamps();
         });
 
@@ -34,8 +34,8 @@ return new class extends Migration
             'exp' => 99999,
             'live' => 3,
             'streak' => 365,
-            'badge' => 'admin',
-            'avatar' => 'logo.svg',
+            'badge' => 'Admin',
+            'avatar' => '/images/logo.svg',
             'created_at' => '2023-11-25 10:30:59',
             'updated_at' => now()
         ]);

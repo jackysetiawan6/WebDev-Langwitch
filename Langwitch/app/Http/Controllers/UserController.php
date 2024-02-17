@@ -8,11 +8,13 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function get_profile_image()
+    public function profile()
     {
-        $user = User::find(session()->get('loginId'));
-        $imagePath = '/images/' . $user->avatar;
-        return response()->file(public_path($imagePath));
+        if (!session()->has('loginId')) {
+            return redirect('/login');
+        }
+        $user = User::find(session('loginId'));
+        return view('profile', ['user' => $user]);
     }
     public function login()
     {
