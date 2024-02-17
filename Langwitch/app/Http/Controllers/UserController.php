@@ -15,7 +15,17 @@ class UserController extends Controller
         }
         $user = User::find(session('loginId'));
         return view('profile', ['user' => $user]);
+
     }
+    // public function diskusi()
+    // {
+    //     if (!session()->has('loginId')) {
+    //         return redirect('/login');
+    //     }
+    //     $user = User::find(session('loginId'));
+    //     return view('diskusi', ['user' => $user]);
+
+    // }
     public function login()
     {
         return view('login');

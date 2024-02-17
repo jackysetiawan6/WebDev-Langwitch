@@ -26,19 +26,17 @@
                         @csrf
                         <div class="text">
                             <input type="text" placeholder="Type a text" id="finasim" name="text">
-                            <input type="file" name="" id="file-input" accept="image/*" onchange="previewImage();" name="image">
-                            <img id="preview">
-                            <label for="file-input" id="file-input-label"><img src="{{ asset('images/attachment.png') }}" alt=""></label>
                         </div>
                         <button type="submit" class="button-post">Post</button>
                     </form>
                 </div>
                 <div class="discussion-other-contain">
                     <div class="prof-name">
-                        <div class="prof-pic"><img src="{{ asset('/Images/profpic.svg') }}" alt=""></div>
+                        {{-- <div class="prof-pic"><img src="{{ asset('/Images/profpic.svg') }}" alt=""></div> --}}
+                        <div class="prof-pic"><img src="{{ $user->avatar }}" alt=""></div>
                         <div class="name-stats-time">
                             {{-- @foreach ($User as $user) --}}
-                            <div class="name-disc">Nana</div>
+                            <div class="name-disc">{{ $user->fullname }}</div>
                             <div class="time-disc">10 mins ago</div>
                             {{-- @endforeach --}}
                         </div>
