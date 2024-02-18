@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Langwitch - Learn languages by yourself</title>
+    <link rel="shortcut icon" href="{{ asset('images/Logo.svg') }}" type="image/x-icon" />
     <link rel="stylesheet" href="{{ asset('css/videocourse.css') }}">
     <link rel="stylesheet" href="{{ asset('css/courseheader.css') }}">
 </head>
@@ -31,10 +31,89 @@
         </div>
     </div>
     <div class="video-styler">
+        <div>
+            <button class="button-next-prev prev"><img src="../images/Prev.svg" alt=""></button>
+        </div>
         <div class="video-course-etc">
-            <iframe width="880" height="480" src="https://www.youtube.com/embed/WQ3_p28fuN0?si=VrEGhqKVNilEaN5V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="slide">
+                <video width="100%" height="100%" controls>
+                    <source src="{{ asset('..\course_video\Course1.mp4') }}" type="video/mp4">
+                </video>
+            </div>
+            <div class="slide">
+                <video width="100%" height="100%" controls>
+                    <source src="{{ asset('..\course_video\Course2.mp4') }}" type="video/mp4">
+                </video>
+            </div>
+            <div class="slide">
+                <video width="100%" height="100%" controls>
+                    <source src="{{ asset('..\course_video\Course3.mp4') }}" type="video/mp4">
+                </video>
+            </div>
+            <div class="slide">
+                <video width="100%" height="100%" controls>
+                    <source src="{{ asset('..\course_video\Course4.mp4') }}" type="video/mp4">
+                </video>
+            </div>
+            <div class="slide">
+                <video width="100%" height="100%" controls>
+                    <source src="{{ asset('..\course_video\Course5.mp4') }}" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div>
+            <button class="button-next-prev next"><img src="../images/Next.svg" alt=""></button>
         </div>
     </div>
+
+    <script>
+        class SlideV {
+            constructor() {
+                this.slides = document.querySelectorAll('.slide')
+                this.currentSlide = 0
+                this.showSlide(this.currentSlide)
+            }
+
+            next() {
+                this.currentSlide++
+                if (this.currentSlide >= this.slides.length) {
+                    this.currentSlide = 0
+                }
+                this.showSlide(this.currentSlide)
+            }
+
+            prev() {
+                this.currentSlide--
+                if (this.currentSlide < 0) {
+                    this.currentSlide = this.slides.length - 1
+                }
+                this.showSlide(this.currentSlide)
+            }
+
+            showSlide(index) {
+                this.slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.style.display = 'block'
+                    } else {
+                        slide.style.display = 'none'
+                    }
+                })
+            }
+        }
+
+        const mySlideV = new SlideV()
+
+        const next = document.querySelector('.next')
+        const prev = document.querySelector('.prev')
+
+        next.addEventListener('click', () => {
+            mySlideV.next()
+        })
+        prev.addEventListener('click', () => {
+            mySlideV.prev()
+        })
+    </script>
+
 
 </body>
 

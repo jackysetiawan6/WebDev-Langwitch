@@ -14,7 +14,7 @@
         <div class="list-sidebar">
             <ul>
                 <li>
-                    <a href="review"><img src="{{ asset('/Images/BookShiny.svg') }}" alt="" class="logo-list">
+                    <a href="homecourse"><img src="{{ asset('/Images/BookShiny.svg') }}" alt="" class="logo-list">
                         <p class="change-dark-mode">Belajar</p>
                     </a>
                 </li>

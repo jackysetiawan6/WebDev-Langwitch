@@ -30,24 +30,24 @@
                         <button type="submit" class="button-post">Post</button>
                     </form>
                 </div>
+                @foreach ($Discussion as $discussion)
                 <div class="discussion-other-contain">
                     <div class="prof-name">
-                        {{-- <div class="prof-pic"><img src="{{ asset('/Images/profpic.svg') }}" alt=""></div> --}}
-                        <div class="prof-pic"><img src="{{ $user->avatar }}" alt=""></div>
+                        <div class="prof-pic"><img src="{{ asset('/Images/profpic.svg') }}" alt=""></div>
+                        {{-- <div class="prof-pic"><img src="{{ $user->avatar }}" alt=""></div> --}}
                         <div class="name-stats-time">
                             {{-- @foreach ($User as $user) --}}
-                            <div class="name-disc">{{ $user->fullname }}</div>
+                            <div class="name-disc">Nana</div>
                             <div class="time-disc">10 mins ago</div>
                             {{-- @endforeach --}}
                         </div>
                         <div class="rank-disc">[Wizard]</div>
                     </div>
                     <div class="text-2">
-                        @foreach ($Discussion as $discussion)
                         {{ $discussion->text }}
-                        @endforeach
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
         <script type="text/javascript" src="{{ asset('js/course.js') }}"></script>

@@ -1,0 +1,37 @@
+.level-per-level {
+    width: 80%;
+}
+
+.only-container {
+    text-align: center;
+}
+
+.container-review {
+    width: 263px;
+    height: 319px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 1.1px 1.1px 2.3px rgba(0, 0, 0, 0.048), 3.6px 3.6px 7.8px rgba(0, 0, 0, 0.072), 16px 16px 35px rgba(0, 0, 0, 0.12);
+    margin-top: 38px;
+}
+
+.review-button-modifier {
+    color: #060934;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.image-modifier-for-button {
+    width: 243px;
+    height: 211px;
+}
+
+.level-and-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

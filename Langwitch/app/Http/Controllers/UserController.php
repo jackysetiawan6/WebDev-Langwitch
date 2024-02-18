@@ -17,6 +17,12 @@ class UserController extends Controller
         return view('profile', ['user' => $user]);
 
     }
+    public function homecourse()
+    {
+        $user = User::find(session('loginId'));
+        return view('homecourse', ['user' => $user]);
+
+    }
     // public function diskusi()
     // {
     //     if (!session()->has('loginId')) {

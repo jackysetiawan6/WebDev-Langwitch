@@ -43,6 +43,10 @@ Route::get('/pptcourse', function () {
     return view('pptcourse');
 });
 
+Route::get('/homecourse', function () {
+    return view('homecourse');
+});
+
 // end of review linker
 
 Route::get('/papanskor', function () {
@@ -54,6 +58,7 @@ Route::get('/papanskor', function () {
 // });
 
 Route::get('/profile', [UserController::class, 'profile']);
+Route::get('/homecourse', [UserController::class, 'homecourse']);
 
 // Route::get('/diskusi', [UserController::class, 'diskusi']);
 

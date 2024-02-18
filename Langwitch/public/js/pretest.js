@@ -61,7 +61,7 @@ rookie_button_01.addEventListener("click", () => {
 });
 
 level_button_01.addEventListener("click", () => {
-    window.location.href = "/review";
+    window.location.href = "/homecourse";
 });
 
 pass_button_01.addEventListener("click", () => {
