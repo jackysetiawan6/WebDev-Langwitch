@@ -1,5 +1,7 @@
 .level-per-level {
     width: 80%;
+    /* display: flex;
+    flex-direction: row; */
 }
 
 .only-container {
@@ -38,4 +40,64 @@
 
 .jekin {
     text-decoration: none;
+}
+
+
+.jekball {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 800;
+    background-image: url(../images/StandPlace.svg);
+    background-position: center;
+    height: 120px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    filter: drop-shadow(3px 3px 15px rgba(0, 0, 0, 0.15));
+}
+
+.level-per-level {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.blobby1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.blobby2 {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.blobby3 {
+    grid-area: 3 / 3 / 4 / 4;
+}
+
+.blobby4 {
+    grid-area: 3 / 4 / 4 / 5;
+}
+
+.blobby5 {
+    grid-area: 4 / 5 / 5 / 6;
+}
+
+.blobby6 {
+    grid-area: 5 / 4 / 6 / 5;
+}
+
+.blobby7 {
+    grid-area: 4 / 3 / 5 / 4;
+}
+
+.blobby8 {
+    grid-area: 5 / 2 / 6 / 3;
+}
+
+.blobby9 {
+    grid-area: 7 / 3 / 8 / 4;
 }

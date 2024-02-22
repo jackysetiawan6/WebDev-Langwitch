@@ -39,7 +39,7 @@
                             </div>
                         </div>
                         <div class="exp-stats">
-                            <p>Exp mu minggu ini</p>
+                            <p>Total exp mu</p>
                             <p class="exp-num">{{ $user->exp }}</p>
                         </div>
                     </div>
