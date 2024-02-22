@@ -57,7 +57,7 @@ test_button_02.addEventListener("click", () => {
 });
 
 rookie_button_01.addEventListener("click", () => {
-    alert("Lanjut ke course aja");
+    window.location.href = "/homecourse";
 });
 
 level_button_01.addEventListener("click", () => {

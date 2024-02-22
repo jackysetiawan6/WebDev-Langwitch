@@ -46,7 +46,30 @@
                     </div>
                     <div class="level-and-button">
                         <div class="level-per-level">
-                            <p>a</p>
+                            <a href="testcoursefirst" class="jekball blobby1">
+                                1
+                            </a>
+                            <a href="" class="jekball blobby2">
+                                2
+                            </a>
+                            <a href="" class="jekball blobby3">
+                                3
+                            </a>
+                            <a href="" class="jekball blobby4">
+                                4
+                            </a>
+                            <a href="" class="jekball blobby5">
+                                5
+                            </a>
+                            <a href="" class="jekball blobby6">
+                                6
+                            </a>
+                            <a href="" class="jekball blobby7">
+                                7
+                            </a>
+                            <a href="" class="jekball blobby8">
+                                8
+                            </a>
                         </div>
                         <a href="review" class="jekin">
                             <div class="container-review">
