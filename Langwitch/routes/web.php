@@ -34,6 +34,7 @@ Route::get('/pretest', [PretestController::class, 'pretest']);
 Route::get('/review', function () {
     return view('review');
 });
+Route::get('/review', [UserController::class, 'review']);
 
 // review linker
 
@@ -48,6 +49,7 @@ Route::get('/pptcourse', function () {
 Route::get('/homecourse', function () {
     return view('homecourse');
 });
+Route::get('/homecourse', [UserController::class, 'homecourse']);
 
 // end of review linker
 
@@ -60,7 +62,7 @@ Route::get('/papanskor', function () {
 // });
 
 Route::get('/profile', [UserController::class, 'profile']);
-Route::get('/homecourse', [UserController::class, 'homecourse']);
+
 
 // Route::get('/diskusi', [UserController::class, 'diskusi']);
 
@@ -90,9 +92,9 @@ Route::get('papanskor', [LeaderboardController::class, 'show']);
 
 Route::get('diskusi', [DiscussionController::class, 'showtext']);
 
-Route::get('/diskusi-show', [DiscussionController::class, 'DiscussionShow'])->name('diskusi-show');
+Route::get('/diskusishow', [DiscussionController::class, 'DiscussionShow'])->name('diskusi-show');
 
-Route::post('/diskusi-store', [DiscussionController::class, 'store'])->name('diskusi-store');
+Route::post('/diskusistore', [DiscussionController::class, 'store'])->name('diskusi-store');
 
 // Route::get('question', [QuestionController::class, 'showtext']);
 

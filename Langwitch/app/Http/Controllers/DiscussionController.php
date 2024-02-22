@@ -10,8 +10,8 @@ class DiscussionController extends Controller
 {
     function showtext()
     {
-        $discussion = Discussion::all();
-        return view('diskusi', ['Discussion' => $discussion]);
+        $data = Discussion::all();
+        return view('diskusi', ['Discussion' => $data]);
     }
 
     public function DiscussionShow()
@@ -26,12 +26,12 @@ class DiscussionController extends Controller
         // 'image' => 'required|image|mimes:png,jpg,jpeg|max:2048'
     ]);
     // $text = $request->input('text');
-    $discussion = new Discussion;
-    $discussion->text = $request->text;
+    $data = new Discussion;
+    $data->text = $request->text;
 
-    $discussion->save();
+    $data->save();
 
-    return redirect()->route('diskusi-show')->with('success', 'Pesan berhasil dikirimkan');
+    return redirect()->back()->with('success', 'Discussion saved successfully!');
 }
 
 
