@@ -57,14 +57,7 @@ Route::get('/papanskor', function () {
     return view('papanskor');
 });
 
-// Route::get('/diskusi', function () {
-//     return view('diskusi');
-// });
-
 Route::get('/profile', [UserController::class, 'profile']);
-
-
-// Route::get('/diskusi', [UserController::class, 'diskusi']);
 
 Route::get('/terjemahan', function () {
     return view('translate');

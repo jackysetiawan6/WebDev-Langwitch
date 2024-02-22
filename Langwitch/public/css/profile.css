@@ -23,12 +23,12 @@
     line-height: normal;
 }
 
-.profile-detail > .username {
+.profile-detail > .email {
     color: #060934;
     font-family: Nunito;
-    font-size: 16px;
+    font-size: 18px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 800;
     line-height: normal;
     opacity: 0.5;
 }
@@ -36,7 +36,7 @@
 .profile-detail > .badge {
     color: #9167e3;
     font-family: Nunito;
-    font-size: 14px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 800;
     line-height: normal;
@@ -76,9 +76,12 @@
 }
 
 .info-container {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     margin-top: 60px;
+    gap: 20px;
 }
 
 .info-right {
@@ -134,8 +137,31 @@
 }
 
 .bigger {
-    width: 800px;
+    width: 620px;
     height: 420px;
     flex-shrink: 0;
     margin-right: 0;
+}
+
+#chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 1440px) {
+    .info-container {
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+    }
+    .info-right {
+        flex-direction: row;
+    }
+    .panel {
+        margin-right: 0;
+    }
+    .bigger {
+        width: 820px;
+    }
 }

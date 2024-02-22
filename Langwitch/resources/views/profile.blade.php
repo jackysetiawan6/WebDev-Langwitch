@@ -38,7 +38,9 @@
                     </div>
                 </div>
                 <div class="info-container">
-                    <div class="panel bigger"></div>
+                    <div class="panel bigger" id="chart-container">
+                        {!! $chart->container() !!}
+                    </div>
                     <div class="info-right">
                         <div class="panel">
                             <img src="{{ asset('/images/EXPLogo.svg') }}" alt="" class="logo-list">
@@ -60,6 +62,8 @@
         </div>
         <script type="text/javascript" src="{{ asset('js/profile.js') }}"></script>
     </div>
+    <script src="{{ $chart->cdn() }}"></script>
+    {{ $chart->script() }}
 </body>
 
 </html>

@@ -2,42 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Charts\UserDailyEXP;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function profile()
+    public function profile(UserDailyEXP $chart)
     {
         if (!session()->has('loginId')) {
             return redirect('/login');
         }
         $user = User::find(session('loginId'));
-        return view('profile', ['user' => $user]);
-
+        return view('profile', ['user' => $user, 'chart' => $chart->build()]);
     }
     public function homecourse()
     {
         $user = User::find(session('loginId'));
         return view('homecourse', ['user' => $user]);
-
     }
     public function review()
     {
         $user = User::find(session('loginId'));
         return view('review', ['user' => $user]);
-
     }
-    // public function diskusi()
-    // {
-    //     if (!session()->has('loginId')) {
-    //         return redirect('/login');
-    //     }
-    //     $user = User::find(session('loginId'));
-    //     return view('diskusi', ['user' => $user]);
-
-    // }
     public function login()
     {
         return view('login');
