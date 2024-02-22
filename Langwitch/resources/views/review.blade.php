@@ -32,7 +32,7 @@
                     <div class="level-exp">
                         <div class="level-stats">
                             <div style="padding: 30px">
-                                <p>Rookie</p>
+                                <p>{{ $user->badge }}</p>
                                 <p class="level-title">Last Course A1.1,
                                     <span class="level-sub">&nbsp; Course 1 : Vocabulary</span>
                                 </p>
@@ -40,7 +40,7 @@
                         </div>
                         <div class="exp-stats">
                             <p>Exp mu minggu ini</p>
-                            <p class="exp-num">40 XP</p>
+                            <p class="exp-num">{{ $user->exp }}</p>
                         </div>
                     </div>
                     <div class="course-page">
