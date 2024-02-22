@@ -27,18 +27,33 @@
                     </div>
                     <div class="profile-image">
                         <img src="{{ $user->avatar }}" alt="Profile Image" />
+                        <div class="editor">
+                            <img src="{{ asset('/images/profile_edit.svg') }}" alt="">
+                        </div>
                     </div>
                     <div class="heart-level">
-                        <img src="{{ asset('/Images/heart.svg') }}" alt="" class="logo-list">
-                        <img src="{{ asset('/Images/heart.svg') }}" alt="" class="logo-list">
-                        <img src="{{ asset('/Images/heart.svg') }}" alt="" class="logo-list">
+                        <img src="{{ asset('/images/heart.svg') }}" alt="" class="logo-list">
+                        <img src="{{ asset('/images/heart.svg') }}" alt="" class="logo-list">
+                        <img src="{{ asset('/images/heart.svg') }}" alt="" class="logo-list">
                     </div>
                 </div>
                 <div class="info-container">
                     <div class="panel bigger"></div>
                     <div class="info-right">
-                        <div class="panel"></div>
-                        <div class="panel"></div>
+                        <div class="panel">
+                            <img src="{{ asset('/images/EXPLogo.svg') }}" alt="" class="logo-list">
+                            <div class="panel-detail">
+                                <p>{{ $user->exp }} exp</p>
+                                <p>Total exp minggu ini</p>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <img src="{{ asset('/images/StreakLogo.svg') }}" alt="" class="logo-list">
+                            <div class="panel-detail">
+                                <p>{{ $user->streak }} hari!</p>
+                                <p>Pertahankan runtunanmu</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
