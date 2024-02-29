@@ -30,21 +30,52 @@
                 <p class="text-modifier text-activator">11</p>
                 <p class="text-modifier text-activator">12</p>
             </div> --}}
-            @foreach ($Question as $q)
+            {{-- @foreach ($Question as $q)
                 <div class="soal-course-first">
                     {{ $q['soal'] }}
                 </div>
-            @endforeach
-            <div class="jawaban-course-first">
-                <div class="ans-effect activator">Jawabannya (active)</div>
-                <div class="ans-effect activator">Jawabannya (non active)</div>
-                <div class="ans-effect activator">Jawabannya</div>
-                <div class="ans-effect activator">Jawabannya</div>
-                <div class="ans-effect activator">Jawabannya</div>
-            </div>
-            <div class="button-answer">
-                <a href="" class="answer-the-question">Jawab</a>
-            </div>
+                <div class="jawaban-course-first">
+
+                    <div class="ans-effect activator">{{ $q['opt_a'] }}</div>
+                    <div class="ans-effect activator">{{ $q['opt_b'] }}</div>
+                    <div class="ans-effect activator">{{ $q['opt_c'] }}</div>
+                    <div class="ans-effect activator">{{ $q['opt_d'] }}</div>
+                    <div class="ans-effect activator">{{ $q['opt_e'] }}</div>
+                </div>
+            @endforeach --}}
+            @php
+                use Spatie\LaravelHtml\HtmlFacade as Html;
+            @endphp
+            <form action="{{ route('submit_answers') }}" method="post">
+                @csrf
+
+                @foreach ($Question as $q)
+                    <div class="soal-course-first">
+                        {{ $q['soal'] }}
+                    </div>
+                    <div class="jawaban-course-first">
+                        @foreach (['opt_a', 'opt_b', 'opt_c', 'opt_d', 'opt_e'] as $optionKey)
+                            <label class="radio-label">
+                                <input type="radio" name="answers[{{ $q['exercise_id'] }}]" value="{{ $optionKey }}"
+                                    class="ans-effect activator">
+                                <span class="radio-text">{{ $q[$optionKey] }}</span>
+                            </label>
+                        @endforeach
+                    </div>
+                @endforeach
+                <div class="button-answer">
+                    <button class="answer-the-question" type="submit">Jawab</button>
+                </div>
+            </form>
+
+            @if (isset($results))
+                <div class="results">
+                    <h2>Results:</h2>
+                    @foreach ($results as $exerciseId => $result)
+                        <p>Question {{ $exerciseId }}: {{ $result ? 'Correct' : 'Incorrect' }}</p>
+                    @endforeach
+                </div>
+            @endif
         </div>
     </body>
 
