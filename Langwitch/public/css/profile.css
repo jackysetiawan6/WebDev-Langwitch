@@ -148,20 +148,3 @@
     justify-content: center;
     align-items: center;
 }
-
-@media screen and (max-width: 1440px) {
-    .info-container {
-        flex-direction: column;
-        justify-content: start;
-        align-items: center;
-    }
-    .info-right {
-        flex-direction: row;
-    }
-    .panel {
-        margin-right: 0;
-    }
-    .bigger {
-        width: 820px;
-    }
-}
