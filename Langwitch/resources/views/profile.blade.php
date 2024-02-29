@@ -32,9 +32,12 @@
                         </div>
                     </div>
                     <div class="heart-level">
-                        <img src="{{ asset('/images/heart.svg') }}" alt="" class="logo-list">
-                        <img src="{{ asset('/images/heart.svg') }}" alt="" class="logo-list">
-                        <img src="{{ asset('/images/heart.svg') }}" alt="" class="logo-list">
+                        @for ($i = 1; $i <= 3; $i++) @if ($i <=$user->live)
+                            <img src="{{ asset('/images/heart.svg') }}" alt="" style="filter: none;">
+                            @else
+                            <img src="{{ asset('/images/heart.svg') }}" alt="" style="filter: grayscale(100%);">
+                            @endif
+                            @endfor
                     </div>
                 </div>
                 <div class="info-container">
@@ -45,7 +48,7 @@
                         <div class="panel">
                             <img src="{{ asset('/images/EXPLogo.svg') }}" alt="" class="logo-list">
                             <div class="panel-detail">
-                                <p>{{ $user->exp }} exp</p>
+                                <p>{{ $weekly }} exp</p>
                                 <p>Total exp minggu ini</p>
                             </div>
                         </div>

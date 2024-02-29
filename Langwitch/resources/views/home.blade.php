@@ -5,9 +5,9 @@
 </head>
 
 <body>
-    @if (!session()->has('loginId'))
+    @if (session()->has('loginId'))
     <script>
-        window.location.href = '/login';
+        window.location.href = '/homecourse';
     </script>
     @endif
     @include('navbar')

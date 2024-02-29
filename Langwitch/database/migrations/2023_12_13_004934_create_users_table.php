@@ -37,7 +37,7 @@ return new class extends Migration
             'badge' => 'Admin',
             'avatar' => '/images/logo.svg',
             'created_at' => '2023-11-25 10:30:59',
-            'updated_at' => now()
+            'updated_at' => '2023-11-25 10:30:59'
         ]);
     }
 

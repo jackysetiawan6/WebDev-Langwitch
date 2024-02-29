@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Charts\UserDailyEXP;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Experience;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -15,7 +16,9 @@ class UserController extends Controller
             return redirect('/login');
         }
         $user = User::find(session('loginId'));
-        return view('profile', ['user' => $user, 'chart' => $chart->build()]);
+        $exp = Experience::where('user_id', $user->id)->first();
+        $weekly = $exp->sn + $exp->sl + $exp->rb + $exp->km + $exp->jm + $exp->sb + $exp->mg;
+        return view('profile', ['user' => $user, 'weekly' => $weekly, 'chart' => $chart->build()]);
     }
     public function homecourse()
     {
@@ -41,6 +44,20 @@ class UserController extends Controller
         if ($user) {
             if (Hash::check(md5($request->input('password')), $user->password)) {
                 $request->session()->put('loginId', $user->id);
+                $loginDate = $user->updated_at->format('Y-m-d');
+                $isMonday = $user->updated_at->isMonday();
+                if (!($loginDate === now()->format('Y-m-d') && $isMonday)) {
+                    $exp = Experience::where('user_id', $user->id)->first();
+                    $exp->sn = 0;
+                    $exp->sl = 0;
+                    $exp->rb = 0;
+                    $exp->km = 0;
+                    $exp->jm = 0;
+                    $exp->sb = 0;
+                    $exp->mg = 0;
+                }
+                $user->updated_at = now();
+                $user->save();
                 return redirect('review')->with('success', 'Login berhasil');
             } else {
                 return redirect()->back()->with('error', 'Password salah');
@@ -72,6 +89,8 @@ class UserController extends Controller
         $user->fullname = $fullname;
         $user->email = $email;
         $user->password = Hash::make(md5($password));
+        $user->created_at = now();
+        $user->updated_at = now();
         $res = $user->save();
         if ($res) {
             $request->session()->put('loginId', $user->id);

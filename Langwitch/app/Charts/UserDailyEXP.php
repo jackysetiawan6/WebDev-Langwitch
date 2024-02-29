@@ -21,16 +21,16 @@ class UserDailyEXP
             return redirect('/login');
         }
         $user = User::find(session('loginId'));
-        $exp = Experience::where('user_id', $user->id)->get();
+        $exp = Experience::where('user_id', $user->id)->first();
         return $this->chart->areaChart()
             ->setXAxis(['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'])
             ->setGrid()
             ->setHeight(400)
-            ->setWidth(600)
+            ->setWidth(700)
             ->setDataset([
                 [
                     'name' => 'EXP',
-                    'data' => [100, 200, 270, 50, 50, 10, 90]
+                    'data' => [$exp->sn, $exp->sl, $exp->rb, $exp->km, $exp->jm, $exp->sb, $exp->mg]
                 ]
             ])
             ->setColors(['#9167E3']);
