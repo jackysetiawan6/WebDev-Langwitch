@@ -80,7 +80,7 @@ nav {
     margin-bottom: 38px;
 }
 
-.ans-effect {
+/* .ans-effect {
     background-color: #FFFFFF;
     border: #9167E3 1px solid;
     border-radius: 30px;
@@ -93,7 +93,22 @@ nav {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-}
+} */
+
+/* label {
+    background-color: #FFFFFF;
+    border: #9167E3 1px solid;
+    border-radius: 30px;
+    color: #9167E3;
+    padding: 11px 0;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+} */
 
 .jawaban-course-first {
     display: flex;
@@ -126,4 +141,32 @@ nav {
     font-size: 24px;
     font-weight: 500;
     cursor: pointer;
+}
+
+
+input[type="radio"] {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}
+
+
+.radio-text {
+    background-color: #fff;
+    border: #9167E3 1px solid;
+    border-radius: 30px;
+    color: #9167E3;
+    padding: 11px 0;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked+.radio-text {
+    background-color: #9167E3;
+    color: #fff;
 }

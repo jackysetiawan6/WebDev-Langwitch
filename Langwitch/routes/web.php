@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DiscussionController;
 use App\Http\Controllers\PretestController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\AnswerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -95,3 +96,11 @@ Route::post('/diskusistore', [DiscussionController::class, 'store'])->name('disk
 
 // Route::post('question-store', [QuestionController::class, 'questionstore'])->name('question-store');
 Route::get('testcoursefirst', [QuestionController::class, 'show']);
+// routes/web.php
+
+
+Route::get('/show-questions', [AnswerController::class, 'showQuestions'])->name('show_questions');
+Route::post('/submit-answers', [AnswerController::class, 'submitAnswers'])->name('submit_answers');
+// Example route definition
+// Route::post('/submit-answers', 'AnswerController@submitAnswers')->middleware('auth');
+
