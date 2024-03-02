@@ -40,6 +40,7 @@
                             @endfor
                     </div>
                 </div>
+                {{-- to use this install composer require arielmejiadev/larapex-charts --}}
                 <div class="info-container">
                     <div class="panel bigger" id="chart-container">
                         {!! $chart->container() !!}
