@@ -8,6 +8,8 @@ use App\Models\User;
 use App\Models\Experience;
 use Illuminate\Support\Facades\View;
 
+use function Laravel\Prompts\alert;
+
 class AnswerController extends Controller
 {
     // public function showQuestions()
@@ -37,8 +39,8 @@ class AnswerController extends Controller
 
         foreach ($answers as $exerciseId => $userAnswer) {
             $results[$exerciseId] = $userAnswer === $correctAnswers[$exerciseId];
+            $user = User::find(session('loginId'));
             if ($results[$exerciseId]) {
-                $user = User::find(session('loginId'));
                 $user->exp += 10;
                 $user->save();
                 $exp = Experience::where('user_id', $user->id)->first();
@@ -67,6 +69,13 @@ class AnswerController extends Controller
                         break;
                 }
                 $exp->save();
+            } else {
+                $user->live -= 1;
+                $user->save();
+                if ($user->live == 0) {
+                    alert('Game Over', 'You have no more lives left', 'error');
+                    return redirect()->route('homecourse');
+                }
             }
         }
 

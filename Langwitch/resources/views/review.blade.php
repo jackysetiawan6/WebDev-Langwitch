@@ -22,9 +22,12 @@
                 <div class="super-title">
                     <h1>Review Pelajaran Sebelumnya</h1>
                     <div class="heart-level">
-                        <img src="{{ asset('/Images/heart.svg') }}" alt="" class="logo-list">
-                        <img src="{{ asset('/Images/heart.svg') }}" alt="" class="logo-list">
-                        <img src="{{ asset('/Images/heart.svg') }}" alt="" class="logo-list">
+                        @for ($i = 1; $i <= 3; $i++) @if ($i <=$user->live)
+                            <img src="{{ asset('/images/heart.svg') }}" alt="" style="filter: none;">
+                            @else
+                            <img src="{{ asset('/images/heart.svg') }}" alt="" style="filter: grayscale(100%);">
+                            @endif
+                            @endfor
                     </div>
                 </div>
                 <div class="level-exp">

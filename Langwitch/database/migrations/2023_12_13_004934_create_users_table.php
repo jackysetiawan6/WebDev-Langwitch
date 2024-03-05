@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('password');
             $table->integer('exp')->default(0);
-            $table->integer('live')->default(3);
+            $table->unsignedTinyInteger('live')->default(3);
             $table->integer('streak')->default(0);
             $table->string('badge')->default('Rookie');
             $table->string('avatar')->default('/images/logo.svg');

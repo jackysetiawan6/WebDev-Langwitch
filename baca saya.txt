@@ -4,6 +4,11 @@ TODO:
 4. Bintang di setiap course
 5. Pretest belum ada soal
 6. Night mode masih belum fungsi di beberapa page
+7. Profile picture di Leaderboard masih statis, belum diambil dari user
+8. Day streak belum masuk
+9. Change profile picture belum bisa
+10. Review ke Course itu sama aja? Wasting?
+11. Soal belum di random
 
 
 Standard Penamaan : 

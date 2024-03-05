@@ -81,7 +81,7 @@ Route::get('/pptcourse', function () {
 Route::get('/homecourse', function () {
     return view('homecourse');
 });
-Route::get('/homecourse', [UserController::class, 'homecourse']);
+Route::get('/homecourse', [UserController::class, 'homecourse'])->name('homecourse');
 
 // end of review linker
 
