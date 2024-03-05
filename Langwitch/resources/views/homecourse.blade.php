@@ -40,7 +40,7 @@
                     <div class="exp-stats">
                         {{-- <div class="only-container"> --}}
                         <p>Exp mu minggu ini</p>
-                        <p class="exp-num">{{ $user->exp }}</p>
+                        <p class="exp-num">{{ $weekly }}</p>
                         {{-- </div> --}}
                     </div>
                 </div>

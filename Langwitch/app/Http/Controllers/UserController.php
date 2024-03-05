@@ -23,7 +23,9 @@ class UserController extends Controller
     public function homecourse()
     {
         $user = User::find(session('loginId'));
-        return view('homecourse', ['user' => $user]);
+        $exp = Experience::where('user_id', $user->id)->first();
+        $weekly = $exp->sn + $exp->sl + $exp->rb + $exp->km + $exp->jm + $exp->sb + $exp->mg;
+        return view('homecourse', ['user' => $user, 'weekly' => $weekly]);
     }
     public function review()
     {

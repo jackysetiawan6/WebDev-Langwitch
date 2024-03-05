@@ -13,6 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('experiences', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->integer('sn')->default(0);
             $table->integer('sl')->default(0);
@@ -21,6 +22,7 @@ return new class extends Migration
             $table->integer('jm')->default(0);
             $table->integer('sb')->default(0);
             $table->integer('mg')->default(0);
+            $table->timestamps();
         });
 
         DB::unprepared('

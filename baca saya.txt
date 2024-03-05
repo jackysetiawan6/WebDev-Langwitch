@@ -1,4 +1,11 @@
-Srandard Penamaan : 
+TODO:
+1. Login Register kasih tahu error dimana
+2. Check eksistensi user setiap kali loading page
+4. Bintang di setiap course
+5. Pretest belum ada soal
+6. Night mode masih belum fungsi di beberapa page
+
+Standard Penamaan : 
 - standard penamaan file PHP, CSS, JS (snake_case)
 - standard penamaan file image, video, dll (CamelCase)
 - standard penamaan function (PHP) (snake_case)

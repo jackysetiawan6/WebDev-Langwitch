@@ -1,12 +1,11 @@
 <?php
 
-// app/Http/Controllers/AnswerController.php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Question;
-use Spatie\LaravelHtml\Html as Html;
+use App\Models\User;
+use App\Models\Experience;
 
 class AnswerController extends Controller
 {
@@ -20,17 +19,48 @@ class AnswerController extends Controller
     {
         $answers = $request->input('answers');
 
-    $correctAnswers = Question::whereIn('exercise_id', array_keys($answers))
-        ->pluck('correct_opt', 'exercise_id')
-        ->toArray();
+        $correctAnswers = Question::whereIn('exercise_id', array_keys($answers))
+            ->pluck('correct_opt', 'exercise_id')
+            ->toArray();
 
-    $results = [];
+        $results = [];
 
-    foreach ($answers as $exerciseId => $userAnswer) {
-        $results[$exerciseId] = $userAnswer === $correctAnswers[$exerciseId];
-    }
+        foreach ($answers as $exerciseId => $userAnswer) {
+            $results[$exerciseId] = $userAnswer === $correctAnswers[$exerciseId];
+            if ($results[$exerciseId]) {
+                $user = User::find(session('loginId'));
+                $user->exp += 10;
+                $user->save();
+                $exp = Experience::where('user_id', $user->id)->first();
+                $dayname = now()->format('D');
+                switch ($dayname) {
+                    case 'Mon':
+                        $exp->sn += 10;
+                        break;
+                    case 'Tue':
+                        $exp->sl += 10;
+                        break;
+                    case 'Wed':
+                        $exp->rb += 10;
+                        break;
+                    case 'Thu':
+                        $exp->km += 10;
+                        break;
+                    case 'Fri':
+                        $exp->jm += 10;
+                        break;
+                    case 'Sat':
+                        $exp->sb += 10;
+                        break;
+                    case 'Sun':
+                        $exp->mg += 10;
+                        break;
+                }
+                $exp->save();
+            }
+        }
 
-    // For demonstration purposes, let's just dump the results to the console
-    dd($results);
+        // For demonstration purposes, let's just dump the results to the console
+        // dd($results);
     }
 }
