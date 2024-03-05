@@ -22,16 +22,42 @@
                 <h1 class="h1-mod">terjemahan</h1>
                 <div class="translator">
                     <p class="slator-mod">Indonesia <img src="./images/exchange.png" alt="" class="slator-mod-img"> English</p>
-                    <input type="text" class="input-translate-mod" placeholder="Type to Translate">
-                    <button class="button-translate-mod">Translate</button>
+                    <input type="text" id="inputTranslate" class="input-translate-mod" placeholder="Type to Translate">
+                    <button id="translateButton" class="button-translate-mod">Translate</button>
                 </div>
                 <div class="mplek">
                     <p class="slator-mod-secondary">Translation</p>
-                    <p class="trans-result">Watch</p>
+                    <p id="transResult" class="trans-result"></p>
                 </div>
             </div>
         </div>
         <script type="text/javascript" src="{{ asset('js/course.js') }}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        {{-- to use this install composer require stichoza/google-translate-php --}}
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                function translateText() {
+                    var inputText = document.getElementById("inputTranslate").value;
+                    var translatedText = performTranslation(inputText);
+                    document.getElementById("transResult").innerText = translatedText;
+                }
+                function performTranslation(text) {
+                    return text;
+                }
+                document.getElementById("translateButton").addEventListener("click", translateText);
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                function translateText() {
+                    var inputText = $("#inputTranslate").val();
+                    $.get('/translate', {text: inputText}, function (translatedText) {
+                        $("#transResult").text(translatedText);
+                    });
+                }
+                $("#translateButton").on("click", translateText);
+            });
+        </script>
     </div>
 </body>
 

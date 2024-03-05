@@ -7,6 +7,7 @@ use App\Http\Controllers\DiscussionController;
 use App\Http\Controllers\PretestController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\AnswerController;
+use Stichoza\GoogleTranslate\GoogleTranslate;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,36 @@ use App\Http\Controllers\AnswerController;
 
 Route::get('/', function () {
     return view('home');
+});
+
+// Route::get('/translate', function () {
+//     $tr = new GoogleTranslate('en'); // Translates into Engli
+//     return $tr->setSource('id')->setTarget('en')->translate('Aku suka makan');
+// });
+Route::get('/translate', function () {
+    // Check if the 'text' parameter is present in the request
+    if (isset($_GET['text'])) {
+        // Get the input text from the 'text' parameter
+        $inputText = $_GET['text'];
+
+        // Create a new instance of GoogleTranslate
+        $tr = new GoogleTranslate('en');
+
+        // Set the source language (Indonesian in this case)
+        $tr->setSource('id');
+
+        // Set the target language (English in this case)
+        $tr->setTarget('en');
+
+        // Translate the input text
+        $translatedText = $tr->translate($inputText);
+
+        // Return the translated text as the response
+        return $translatedText;
+    } else {
+        // If 'text' parameter is not present, return an error message
+        return 'Error: Text parameter missing';
+    }
 });
 
 Route::get('/course', function () {
