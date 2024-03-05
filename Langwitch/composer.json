@@ -12,6 +12,7 @@
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "laravelcollective/html": "*",
+        "laravelrus/localized-carbon": "^1.4",
         "spatie/laravel-html": "^3.5",
         "stichoza/google-translate-php": "^5.1"
     },

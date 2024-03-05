@@ -115,9 +115,7 @@ Route::get('/logout-success', [UserController::class, 'logout_user'])->name('log
 
 Route::get('papanskor', [LeaderboardController::class, 'show']);
 
-Route::get('diskusi', [DiscussionController::class, 'showtext']);
-
-Route::get('/diskusishow', [DiscussionController::class, 'DiscussionShow'])->name('diskusi-show');
+Route::get('/diskusi', [DiscussionController::class, 'index'])->name('diskusi-show');
 
 Route::post('/diskusistore', [DiscussionController::class, 'store'])->name('diskusi-store');
 

@@ -21,24 +21,23 @@ return new class extends Migration
             $table->integer('exp')->default(0);
             $table->integer('live')->default(3);
             $table->integer('streak')->default(0);
-            $table->string('badge')->default('rookie');
+            $table->string('badge')->default('Rookie');
             $table->string('avatar')->default('/images/logo.svg');
             $table->timestamps();
         });
 
-        // Add sample data
-        DB::table('users')->insert([
-            'fullname' => 'Tester Account',
-            'email' => 'tester@se.id',
-            'password' => Hash::make(md5('password')),
-            'exp' => 99999,
-            'live' => 3,
-            'streak' => 365,
-            'badge' => 'Admin',
-            'avatar' => '/images/logo.svg',
-            'created_at' => '2023-11-25 10:30:59',
-            'updated_at' => '2023-11-25 10:30:59'
-        ]);
+        // DB::table('users')->insert([
+        //     'fullname' => 'Tester Account',
+        //     'email' => 'tester@se.id',
+        //     'password' => Hash::make(md5('password')),
+        //     'exp' => 99999,
+        //     'live' => 3,
+        //     'streak' => 365,
+        //     'badge' => 'Admin',
+        //     'avatar' => '/images/logo.svg',
+        //     'created_at' => '2023-11-25 10:30:59',
+        //     'updated_at' => '2023-11-25 10:30:59'
+        // ]);
     }
 
     /**

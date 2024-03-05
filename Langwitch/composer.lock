@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8703aa1b908f462211e0b59110e83f48",
+    "content-hash": "3a928a4a67244fee006bf78bec106610",
     "packages": [
         {
             "name": "arielmejiadev/larapex-charts",
@@ -1635,6 +1635,55 @@
             },
             "abandoned": "spatie/laravel-html",
             "time": "2023-04-25T02:46:11+00:00"
+        },
+        {
+            "name": "laravelrus/localized-carbon",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelRUS/localized-carbon.git",
+                "reference": "0a08dbf7687f5cb4cd35180c326502b2f4e5b516"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelRUS/localized-carbon/zipball/0a08dbf7687f5cb4cd35180c326502b2f4e5b516",
+                "reference": "0a08dbf7687f5cb4cd35180c326502b2f4e5b516",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=4.1.0",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Laravelrus\\LocalizedCarbon\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aleksandr Egorov",
+                    "email": "amego2006@gmail.com"
+                }
+            ],
+            "description": "A localizable version of Carbon",
+            "keywords": [
+                "carbon",
+                "date",
+                "datetime",
+                "laravel",
+                "time"
+            ],
+            "support": {
+                "issues": "https://github.com/LaravelRUS/localized-carbon/issues",
+                "source": "https://github.com/LaravelRUS/localized-carbon/tree/1.4"
+            },
+            "abandoned": true,
+            "time": "2015-01-30T02:49:29+00:00"
         },
         {
             "name": "league/commonmark",
