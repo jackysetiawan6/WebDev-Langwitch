@@ -6,14 +6,24 @@ use Illuminate\Http\Request;
 use App\Models\Question;
 use App\Models\User;
 use App\Models\Experience;
+use Illuminate\Support\Facades\View;
 
 class AnswerController extends Controller
 {
-    public function showQuestions()
+    // public function showQuestions()
+    // {
+    //     $data = Question::paginate(1);
+    //     return view('testcoursefirst', ['Question' => $data]);
+    // }
+    public function showQuestions(Request $request)
     {
-        $data = Question::paginate(1);
-        return view('testcoursefirst', ['Question' => $data]);
+        $currentPage = $request->input('page', 1);
+
+        $data = Question::paginate(1, ['*'], 'page', $currentPage);
+
+        return View::make('testcoursefirst', ['Question' => $data, 'currentPage' => $currentPage]);
     }
+
 
     public function submitAnswers(Request $request)
     {
@@ -59,6 +69,11 @@ class AnswerController extends Controller
                 $exp->save();
             }
         }
+
+        $currentPage = $request->input('page', 1);
+        $nextPage = $currentPage + 1;
+
+        return redirect()->route('show_questions', ['page' => $nextPage])->with('results', $results);
 
         // For demonstration purposes, let's just dump the results to the console
         // dd($results);

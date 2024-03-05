@@ -10,7 +10,8 @@ class QuestionController extends Controller
     function show()
     {
         $data = Question::paginate(1);
-        return view('testcoursefirst',['Question'=>$data]);
+
+        return view('testcoursefirst', ['Question' => $data]);
     }
 
 }

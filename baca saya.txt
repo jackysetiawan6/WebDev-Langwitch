@@ -5,6 +5,7 @@ TODO:
 5. Pretest belum ada soal
 6. Night mode masih belum fungsi di beberapa page
 
+
 Standard Penamaan : 
 - standard penamaan file PHP, CSS, JS (snake_case)
 - standard penamaan file image, video, dll (CamelCase)
