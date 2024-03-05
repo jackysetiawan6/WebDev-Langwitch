@@ -9,6 +9,11 @@
 </head>
 
 <body>
+    @if (session()->has('loginId'))
+    <script>
+        window.location.href = '/profile';
+    </script>
+    @endif
     <div class="container">
         <img src="{{ asset('images/Logo.svg') }}" alt="Logo" class="logo" />
         <form class="middle" action="{{ route('register-success') }}" method="POST">

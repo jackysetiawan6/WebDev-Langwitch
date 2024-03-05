@@ -103,4 +103,3 @@ Route::get('/show-questions', [AnswerController::class, 'showQuestions'])->name(
 Route::post('/submit-answers', [AnswerController::class, 'submitAnswers'])->name('submit_answers');
 // Example route definition
 // Route::post('/submit-answers', 'AnswerController@submitAnswers')->middleware('auth');
-
