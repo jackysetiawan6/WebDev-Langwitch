@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Pretest;
 
 class PretestController extends Controller
 {
@@ -16,4 +17,10 @@ class PretestController extends Controller
         $fullname = $user->fullname;
         return view('pretest', ['fullname' => $fullname]);
     }
+    function show()
+    {
+        $data = Pretest::all();
+        return view('pretest', ['pretest' => $data]);
+    }
+
 }

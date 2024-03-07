@@ -8,6 +8,7 @@ use App\Http\Controllers\PretestController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\AnswerController;
 use Stichoza\GoogleTranslate\GoogleTranslate;
+use App\Http\Controllers\PretestAnswer;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,27 +31,14 @@ Route::get('/', function () {
 //     return $tr->setSource('id')->setTarget('en')->translate('Aku suka makan');
 // });
 Route::get('/translate', function () {
-    // Check if the 'text' parameter is present in the request
     if (isset($_GET['text'])) {
-        // Get the input text from the 'text' parameter
         $inputText = $_GET['text'];
-
-        // Create a new instance of GoogleTranslate
         $tr = new GoogleTranslate('en');
-
-        // Set the source language (Indonesian in this case)
         $tr->setSource('id');
-
-        // Set the target language (English in this case)
         $tr->setTarget('en');
-
-        // Translate the input text
         $translatedText = $tr->translate($inputText);
-
-        // Return the translated text as the response
         return $translatedText;
     } else {
-        // If 'text' parameter is not present, return an error message
         return 'Error: Text parameter missing';
     }
 });
@@ -130,4 +118,6 @@ Route::get('testcoursefirst', [QuestionController::class, 'show']);
 Route::get('/show-questions', [AnswerController::class, 'showQuestions'])->name('show_questions');
 Route::post('/submit-answers', [AnswerController::class, 'submitAnswers'])->name('submit_answers');
 // Example route definition
-// Route::post('/submit-answers', 'AnswerController@submitAnswers')->middleware('auth');
+Route::get('pretest', [PretestController::class, 'show']);
+Route::get('/show-questions-pretest', [PretestAnswer::class, 'showQuestions'])->name('show_questions_pretest');
+Route::post('/submit-answers-pretest', [PretestAnswer::class, 'submitAnswers'])->name('submit_answers_pretest');
