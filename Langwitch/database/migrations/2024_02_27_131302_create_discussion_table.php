@@ -18,15 +18,6 @@ return new class extends Migration
             $table->text('text');
             $table->timestamps();
         });
-
-        // DB::table('discussions')->insert(
-        //     [
-        //         'user_id' => 1,
-        //         'text' => 'Hello World!',
-        //         'created_at' => '2023-12-13 00:49:34',
-        //         'updated_at' => '2023-12-13 00:49:34'
-        //     ]
-        // );
     }
 
     /**
