@@ -13,7 +13,6 @@ class PretestController extends Controller
             return redirect('login');
         }
         $user = User::where('id', session('loginId'))->first();
-        $fullname = $user->fullname;
-        return view('pretest', ['fullname' => $fullname]);
+        return view('pretest', ['user' => $user]);
     }
 }

@@ -90,6 +90,7 @@ Route::get('/papanskor', function () {
 });
 
 Route::get('/profile', [UserController::class, 'profile']);
+Route::post('/profile-update-picture', [UserController::class, 'updateProfilePicture'])->name('profile.update.picture');
 
 Route::get('/terjemahan', function () {
     return view('translate');

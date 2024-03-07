@@ -10,6 +10,11 @@
 </head>
 
 <body>
+    @if (!$user->is_new)
+    <script>
+        window.location.href = '/homecourse';
+    </script>
+    @endif
     <div class="container">
         <div id="part-start" class="panel">
             <img class="mascot" src="{{ asset('images/Mascot.svg') }}" alt="Mascot">
@@ -32,14 +37,14 @@
         <div id="part-rookie" class="panel success">
             <img class="mascot" src="{{ asset('images/Mascot.svg') }}" alt="Mascot">
             <div class="panel-container">
-                <p class="title">Selamat Datang di Langwitch<br>Rookie {{ $fullname; }}!</p>
+                <p class="title">Selamat Datang di Langwitch<br>Rookie {{ $user->fullname; }}!</p>
                 <button class="button-01">Jelajahi Langwitch!</button>
             </div>
         </div>
         <div id="part-level" class="panel success">
             <img class="mascot" src="{{ asset('images/Mascot.svg') }}" alt="Mascot">
             <div class="panel-container">
-                <p class="title">Selamat Datang di Langwitch<br>Level {{ $fullname; }}!</p>
+                <p class="title">Selamat Datang di Langwitch<br>{{ $user->badge }} {{ $user->fullname; }}!</p>
                 <button class="button-01">Jelajahi Langwitch!</button>
             </div>
         </div>
