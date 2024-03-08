@@ -49,29 +49,30 @@
                     <form action="{{ route('submit_answers_pretest') }}" method="post" class="choices">
                         @csrf
 
-                        @foreach ($pretest as $p)
-                        <div class="soal-course-first">
-                            {{ $p->soal }}
-                        </div>
-                        <div class="button-03">
-                            @foreach (['a', 'b', 'c', 'd', 'e'] as $optionKey)
-                            <label class="radio-label">
-                                <input type="radio" name="answers[{{ $p->id }}]" value="{{ $optionKey }}" class="ans-effect activator">
-                                <span class="radio-text">{{ $p->$optionKey }}</span>
-                            </label>
+                            @foreach ($pretest as $p)
+                                <div class="soal-pretest">
+                                    {{ $p->soal }}
+                                </div>
+                                <div class="option-answer">
+                                    @foreach (['a', 'b', 'c', 'd', 'e'] as $optionKey)
+                                        <label class="radio-label">
+                                            <input type="radio" name="answers[{{ $p->id }}]" value="{{ $optionKey }}"
+                                                class="ans-effect activator">
+                                            <span class="radio-text button-03">{{ $p->$optionKey }}</span>
+                                        </label>
+                                    @endforeach
+                                </div>
                             @endforeach
-                        </div>
-                        @endforeach
 
-                        <div class="button-01">
-                            <button class="answer-the-question" type="submit">Jawab</button>
-                        </div>
-                    </form>
+                            <div class="editor-button">
+                                <button class="answer-the-question button-01 editor" type="submit">Jawab</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="{{ asset('js/pretest.js') }}"></script>
-</body>
+        <script src="{{ asset('js/pretest.js') }}"></script>
+    </body>
 
 </html>
