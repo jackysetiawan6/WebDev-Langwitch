@@ -2,11 +2,14 @@
     user-select: none;
 }
 
+*::-webkit-scrollbar {
+    display: none;
+}
+
 .container-all {
     height: 90%;
     width: 100%;
-    position: relative;
-    top: 50px;
+    margin: 50px 0 0 0;
     display: flex;
     flex-direction: column;
 }
@@ -158,4 +161,15 @@
     line-height: normal;
     user-select: text;
     margin: 20px;
+}
+
+.toggle-theme {
+    background-image: url(../images/Moon.svg);
+    background-size: cover;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    cursor: pointer;
 }

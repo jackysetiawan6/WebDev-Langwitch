@@ -10,6 +10,26 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    public function updateProfilePicture(Request $request)
+    {
+        $this->validate($request, [
+            'profile_picture' => ['required', 'image', 'mimes:jpg,png,jpeg,gif', 'max:2048'], // Adjust validation rules as needed
+        ]);
+
+        $imageName = $request->file('profile_picture')->getClientOriginalExtension();
+        dd($imageName);
+        // $request->file('profile_picture')->storeAs('public/profile_pictures', $imageName);
+
+        // if (session()->has('loginId')) {
+        //     $user = User::find(session('loginId'));
+        //     $user['profile_picture'] = $imageName;
+        //     $user->save();
+        // }
+
+        // return redirect()->route('profile');
+    }
+
+
     public function profile(UserDailyEXP $chart)
     {
         if (!session()->has('loginId')) {
@@ -22,6 +42,9 @@ class UserController extends Controller
     }
     public function homecourse()
     {
+        if (!session('loginId')) {
+            return redirect('login');
+        }
         $user = User::find(session('loginId'));
         $exp = Experience::where('user_id', $user->id)->first();
         $weekly = $exp->sn + $exp->sl + $exp->rb + $exp->km + $exp->jm + $exp->sb + $exp->mg;
@@ -29,6 +52,9 @@ class UserController extends Controller
     }
     public function review()
     {
+        if (!session('loginId')) {
+            return redirect('login');
+        }
         $user = User::find(session('loginId'));
         return view('review', ['user' => $user]);
     }
