@@ -10,26 +10,6 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function updateProfilePicture(Request $request)
-    {
-        $this->validate($request, [
-            'profile_picture' => ['required', 'image', 'mimes:jpg,png,jpeg,gif', 'max:2048'], // Adjust validation rules as needed
-        ]);
-
-        $imageName = $request->file('profile_picture')->getClientOriginalExtension();
-        dd($imageName);
-        // $request->file('profile_picture')->storeAs('public/profile_pictures', $imageName);
-
-        // if (session()->has('loginId')) {
-        //     $user = User::find(session('loginId'));
-        //     $user['profile_picture'] = $imageName;
-        //     $user->save();
-        // }
-
-        // return redirect()->route('profile');
-    }
-
-
     public function profile(UserDailyEXP $chart)
     {
         if (!session()->has('loginId')) {

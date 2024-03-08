@@ -21,5 +21,4 @@ class PretestController extends Controller
         $data = Pretest::all();
         return view('pretest', ['pretest' => $data]);
     }
-
 }

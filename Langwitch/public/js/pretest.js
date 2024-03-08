@@ -10,9 +10,6 @@ const test_button_01 = document.querySelector(
 const test_button_02 = document.querySelector(
     "#part-test > .panel-container > .button-02"
 );
-const rookie_button_01 = document.querySelector(
-    "#part-rookie > .panel-container > .button-01"
-);
 const level_button_01 = document.querySelector(
     "#part-level > .panel-container > .button-01"
 );
@@ -22,11 +19,10 @@ const pass_button_01 = document.querySelector(
 
 const start_panel = document.querySelector("#part-start");
 const test_panel = document.querySelector("#part-test");
-const rookie_panel = document.querySelector("#part-rookie");
 const level_panel = document.querySelector("#part-level");
 const pass_panel = document.querySelector("#part-pass");
 
-let panels = [start_panel, test_panel, rookie_panel, level_panel, pass_panel];
+let panels = [start_panel, test_panel, level_panel, pass_panel];
 
 function hidePanels(current_panel) {
     panels.forEach((panel) => {
@@ -54,10 +50,6 @@ test_button_01.addEventListener("click", () => {
 test_button_02.addEventListener("click", () => {
     hidePanels(rookie_panel);
     rookie_panel.style.display = "flex";
-});
-
-rookie_button_01.addEventListener("click", () => {
-    window.location.href = "/homecourse";
 });
 
 level_button_01.addEventListener("click", () => {
