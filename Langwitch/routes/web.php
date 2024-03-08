@@ -47,8 +47,6 @@ Route::get('/course', function () {
     return view('course');
 });
 
-Route::get('/pretest', [PretestController::class, 'pretest']);
-
 // sidebar linker
 
 Route::get('/review', function () {
@@ -66,9 +64,6 @@ Route::get('/pptcourse', function () {
     return view('pptcourse');
 });
 
-Route::get('/homecourse', function () {
-    return view('homecourse');
-});
 Route::get('/homecourse', [UserController::class, 'homecourse'])->name('homecourse');
 
 // end of review linker
@@ -78,7 +73,7 @@ Route::get('/papanskor', function () {
 });
 
 Route::get('/profile', [UserController::class, 'profile']);
-Route::post('/profile-update-picture', [UserController::class, 'updateProfilePicture'])->name('profile.update.picture');
+Route::get('/update-status', [PretestController::class, 'updateStatus'])->name('update-status');
 
 Route::get('/terjemahan', function () {
     return view('translate');

@@ -34,9 +34,7 @@
         <div id="part-level" class="panel success">
             <img class="mascot" src="{{ asset('images/Mascot.svg') }}" alt="Mascot">
             <div class="panel-container">
-                {{-- <p class="title">Selamat Datang di Langwitch<br>{{ $user->badge }} {{ $user->fullname }}!</p> --}}
-                <p class="title">Selamat Datang di Langwitch<br>Rookie!</p>
-
+                <p class="title">Selamat Datang di Langwitch<br>{{ $user->badge }} {{ $user->fullname }}!</p>
                 <button class="button-01">Jelajahi Langwitch!</button>
             </div>
         </div>
@@ -48,31 +46,36 @@
                 <div class="choices">
                     <form action="{{ route('submit_answers_pretest') }}" method="post" class="choices">
                         @csrf
-
-                            @foreach ($pretest as $p)
-                                <div class="soal-pretest">
-                                    {{ $p->soal }}
-                                </div>
-                                <div class="option-answer">
-                                    @foreach (['a', 'b', 'c', 'd', 'e'] as $optionKey)
-                                        <label class="radio-label">
-                                            <input type="radio" name="answers[{{ $p->id }}]" value="{{ $optionKey }}"
-                                                class="ans-effect activator">
-                                            <span class="radio-text button-03">{{ $p->$optionKey }}</span>
-                                        </label>
-                                    @endforeach
-                                </div>
+                        @foreach ($pretest as $p)
+                        <div class="soal-pretest">
+                            {{ $p->soal }}
+                        </div>
+                        <div class="option-answer">
+                            @foreach (['a', 'b', 'c', 'd', 'e'] as $optionKey)
+                            <label class="radio-label">
+                                <input type="radio" name="answers[{{ $p->id }}]" value="{{ $optionKey }}" class="ans-effect activator">
+                                <span class="radio-text button-03">{{ $p->$optionKey }}</span>
+                            </label>
                             @endforeach
+                        </div>
+                        @endforeach
 
-                            <div class="editor-button">
-                                <button class="answer-the-question button-01 editor" type="submit">Jawab</button>
-                            </div>
-                        </form>
-                    </div>
+                        <div class="editor-button">
+                            <button class="answer-the-question button-01 editor" type="submit">Jawab</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-        <script src="{{ asset('js/pretest.js') }}"></script>
-    </body>
+    </div>
+    <script src="{{ asset('js/pretest.js') }}"></script>
+    @if ($user->is_new == 0)
+    {
+    <script>
+        showLevelPanel();
+    </script>
+    }
+    @endif
+</body>
 
 </html>

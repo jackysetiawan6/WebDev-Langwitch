@@ -16,6 +16,14 @@
         window.location.href = '/login';
     </script>
     @endif
+    <?php
+
+    use App\Models\User; ?>
+    @if (User::find(session('loginId'))->is_new != -1)
+    <script>
+        window.location.href = '/pretest';
+    </script>
+    @endif
     <div class="course-header">
         <div>
             <div class="cross-close">

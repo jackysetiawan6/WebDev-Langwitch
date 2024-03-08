@@ -27,9 +27,6 @@
                     </div>
                     <div class="profile-image">
                         <img src="{{ $user->avatar }}" alt="Profile Image" />
-                        <div class="editor">
-                            <img src="{{ asset('/images/profile_edit.svg') }}" alt="">
-                        </div>
                     </div>
                     <div class="heart-level">
                         @for ($i = 1; $i <= 3; $i++) @if ($i <=$user->live)

@@ -10,6 +10,13 @@ class DiscussionController extends Controller
 {
     public function index()
     {
+        if (!session('loginId')) {
+            return redirect('login');
+        }
+        $user = User::find(session('loginId'));
+        if ($user->is_new != -1) {
+            return redirect('pretest');
+        }
         $discussions = Discussion::with('user')->latest()->get();
         return view('diskusi', compact('discussions'));
     }

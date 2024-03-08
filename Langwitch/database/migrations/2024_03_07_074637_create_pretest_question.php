@@ -12,7 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pretest', function (Blueprint $table) {
+        Schema::create('pretests', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->unsignedBigInteger('pretest_level');
             $table->text('soal');
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->char('correct', 2);
             $table->timestamps();
         });
-        DB::table('pretest')->insert([
+        DB::table('pretests')->insert([
             ['pretest_level' => 1, 'soal' => '(you/like) swimming?', 'a' => 'Does you like', 'b' => 'Do you like', 'c' => 'Was you liked', 'd' => 'Does you likes', 'e' => 'Do you likes', 'correct' => 'b'],
             ['pretest_level' => 2, 'soal' => 'The boys ___ (annoy) everyone present at the party.', 'a' => 'Annoys', 'b' => 'Was annoying', 'c' => 'Are annoying', 'd' => 'Is annoying', 'e' => 'Annoyed', 'correct' => 'c'],
             ['pretest_level' => 3, 'soal' => 'He ___ (work) under the pressure of his boss', 'a' => 'Have worked', 'b' => 'Was working', 'c' => 'Has worked', 'd' => 'Have working', 'e' => 'Works', 'correct' => 'c'],

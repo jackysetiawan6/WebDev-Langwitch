@@ -13,9 +13,6 @@ const test_button_02 = document.querySelector(
 const level_button_01 = document.querySelector(
     "#part-level > .panel-container > .button-01"
 );
-const pass_button_01 = document.querySelector(
-    "#part-pass > .panel-container > .button-01"
-);
 
 const start_panel = document.querySelector("#part-start");
 const test_panel = document.querySelector("#part-test");
@@ -32,31 +29,25 @@ function hidePanels(current_panel) {
     });
 }
 
+function showLevelPanel() {
+    hidePanels(level_panel);
+    level_panel.style.display = "flex";
+}
+
 start_button_01.addEventListener("click", () => {
     hidePanels(test_panel);
     test_panel.style.display = "flex";
 });
 
-start_button_02.addEventListener("click", () => {
-    hidePanels(rookie_panel);
-    rookie_panel.style.display = "flex";
-});
+start_button_02.addEventListener("click", showLevelPanel);
 
 test_button_01.addEventListener("click", () => {
     hidePanels(pass_panel);
     pass_panel.style.display = "flex";
 });
 
-test_button_02.addEventListener("click", () => {
-    hidePanels(rookie_panel);
-    rookie_panel.style.display = "flex";
-});
+test_button_02.addEventListener("click", showLevelPanel);
 
 level_button_01.addEventListener("click", () => {
-    window.location.href = "/homecourse";
-});
-
-pass_button_01.addEventListener("click", () => {
-    hidePanels(level_panel);
-    level_panel.style.display = "flex";
+    window.location.href = "/update-status";
 });

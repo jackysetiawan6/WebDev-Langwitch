@@ -16,6 +16,14 @@
         window.location.href = '/login';
     </script>
     @endif
+    <?php
+
+    use App\Models\User; ?>
+    @if (User::find(session('loginId'))->is_new != -1)
+    <script>
+        window.location.href = '/pretest';
+    </script>
+    @endif
     @include('courseheader')
     <div class="video-ppt-test">
         <a href="videocourse" class="video-course-class">

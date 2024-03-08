@@ -1,5 +1,40 @@
 # WebDev-Langwitch
 
-Binus University Online Learning
+WebDev-Langwitch adalah sebuah website yang dibuat untuk memudahkan pengguna dalam belajar bahasa asing. Website ini menyediakan berbagai macam fitur yang dapat membantu pengguna dalam belajar bahasa asing, seperti fitur belajar, fitur latihan soal, fitur diskusi, dan fitur lainnya.
+
+## Installation
 
 1. composer require laravelrus/localized-carbon
+2. composer require arielmejiadev/larapex-charts
+3. composer require stichoza/google-translate-php
+
+## TODO
+
+1. Login Register kasih tahu error dimana.
+2. Bintang di setiap course.
+3. Night mode masih belum fungsi di beberapa page.
+4. Soal belum di random
+
+## Naming Standard
+
+- standard penamaan file PHP, CSS, JS (snake_case)
+- standard penamaan file image, video, dll (CamelCase)
+- standard penamaan function (PHP) (snake_case)
+
+## Version Control
+
+(V1.0.0) -> (V1.0.1) for minor update
+(V1.0.0) -> (V1.1.0) for major update
+
+## Requirements
+
+- Node JS (20.9.0 LTS) (Recommended user)
+- Composer V2.6.5
+- XAMPP 8.2.4 (PHP)
+- Git Bash 2.42.1
+- Laravel 10.x
+
+## Notes
+
+Git bash jika tidak bisa di download bisa menggunakan
+winget install --id Git.Git -e --source winget

@@ -12,20 +12,12 @@ use function Laravel\Prompts\alert;
 
 class AnswerController extends Controller
 {
-    // public function showQuestions()
-    // {
-    //     $data = Question::paginate(1);
-    //     return view('testcoursefirst', ['Question' => $data]);
-    // }
     public function showQuestions(Request $request)
     {
         $currentPage = $request->input('page', 1);
-
         $data = Question::paginate(1, ['*'], 'page', $currentPage);
-
         return View::make('testcoursefirst', ['Question' => $data, 'currentPage' => $currentPage]);
     }
-
 
     public function submitAnswers(Request $request)
     {
@@ -42,6 +34,9 @@ class AnswerController extends Controller
             $user = User::find(session('loginId'));
             if ($results[$exerciseId]) {
                 $user->exp += 10;
+                if (!$user->update_at->isToday()) {
+                    $user->streak += 1;
+                }
                 $user->save();
                 $exp = Experience::where('user_id', $user->id)->first();
                 $dayname = now()->format('D');

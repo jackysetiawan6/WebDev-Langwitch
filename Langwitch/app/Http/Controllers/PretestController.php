@@ -8,17 +8,26 @@ use App\Models\Pretest;
 
 class PretestController extends Controller
 {
-    public function pretest()
+    function show()
     {
         if (!session('loginId')) {
             return redirect('login');
         }
         $user = User::where('id', session('loginId'))->first();
-        return view('pretest', ['user' => $user]);
-    }
-    function show()
-    {
+        if ($user->is_new == -1) {
+            return redirect('homecourse');
+        }
         $data = Pretest::all();
-        return view('pretest', ['pretest' => $data]);
+        return view('pretest', ['pretest' => $data, 'user' => $user]);
+    }
+
+    function updateStatus()
+    {
+        $user = User::find(session('loginId'));
+        $user->is_new = -1;
+        $user->save();
+
+        // dd($user->is_new);
+        return redirect('homecourse');
     }
 }

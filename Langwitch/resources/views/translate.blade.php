@@ -15,6 +15,14 @@
         window.location.href = '/login';
     </script>
     @endif
+    <?php
+
+    use App\Models\User; ?>
+    @if (User::find(session('loginId'))->is_new != -1)
+    <script>
+        window.location.href = '/pretest';
+    </script>
+    @endif
     <div class="container">
         @include('sidebar')
         <div class="container-content-bg">
@@ -35,12 +43,13 @@
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         {{-- to use this install composer require stichoza/google-translate-php --}}
         <script>
-            document.addEventListener("DOMContentLoaded", function () {
+            document.addEventListener("DOMContentLoaded", function() {
                 function translateText() {
                     var inputText = document.getElementById("inputTranslate").value;
                     var translatedText = performTranslation(inputText);
                     document.getElementById("transResult").innerText = translatedText;
                 }
+
                 function performTranslation(text) {
                     return text;
                 }
@@ -48,10 +57,12 @@
             });
         </script>
         <script>
-            $(document).ready(function () {
+            $(document).ready(function() {
                 function translateText() {
                     var inputText = $("#inputTranslate").val();
-                    $.get('/translate', {text: inputText}, function (translatedText) {
+                    $.get('/translate', {
+                        text: inputText
+                    }, function(translatedText) {
                         $("#transResult").text(translatedText);
                     });
                 }

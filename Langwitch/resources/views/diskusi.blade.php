@@ -15,11 +15,6 @@
 </head>
 
 <body>
-    @if (!session()->has('loginId'))
-    <script>
-        window.location.href = '/login';
-    </script>
-    @endif
     <div class="container">
         @include('sidebar')
         <div class="container-content-bg">

@@ -22,8 +22,8 @@ return new class extends Migration
             $table->unsignedTinyInteger('live')->default(3);
             $table->integer('streak')->default(0);
             $table->string('badge')->default('Rookie');
-            $table->string('avatar')->default('/images/Logo.svg');
-            $table->boolean('is_new')->default(true);
+            $table->string('avatar')->default('/images/profpic.svg');
+            $table->integer('is_new')->default(1);
             $table->timestamps();
         });
 
