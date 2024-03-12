@@ -164,6 +164,11 @@ input[type="radio"] {
     width: 0;
 }
 
+.ans-effect.selected+.radio-text {
+    color: #fff;
+    background-color: #9167e3;
+}
+
 /* #part-start, */
 #part-test,
 #part-rookie,
