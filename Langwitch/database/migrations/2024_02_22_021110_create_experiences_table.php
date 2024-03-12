@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('jm')->default(0);
             $table->integer('sb')->default(0);
             $table->integer('mg')->default(0);
+            $table->date('last_streak')->nullable();
             $table->timestamps();
         });
 

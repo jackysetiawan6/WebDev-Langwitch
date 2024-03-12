@@ -17,6 +17,9 @@ class QuestionController extends Controller
         if ($user->is_new != -1) {
             return redirect('pretest');
         }
+        if ($user->live == 0) {
+            return redirect('homecourse');
+        }
         $data = Question::paginate(1);
         return view('testcoursefirst', ['Question' => $data]);
     }

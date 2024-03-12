@@ -9,6 +9,7 @@ use App\Models\Experience;
 use Illuminate\Support\Facades\View;
 
 use function Laravel\Prompts\alert;
+use Carbon\Carbon;
 
 class AnswerController extends Controller
 {
@@ -34,8 +35,22 @@ class AnswerController extends Controller
             $user = User::find(session('loginId'));
             if ($results[$exerciseId]) {
                 $user->exp += 10;
-                if (!$user->update_at->isToday()) {
-                    $user->streak += 1;
+                switch ($user->exp) {
+                    case $user->exp < 7000:
+                        $user->badge = 'Wizard';
+                        break;
+                    case $user->exp < 4200:
+                        $user->badge = 'Sorcerer';
+                        break;
+                    case $user->exp < 2100:
+                        $user->badge = 'Magician';
+                        break;
+                    case $user->exp < 700:
+                        $user->badge = 'Rookie';
+                        break;
+                    default:
+                        $user->badge = 'Rookie';
+                        break;
                 }
                 $user->save();
                 $exp = Experience::where('user_id', $user->id)->first();
@@ -62,6 +77,11 @@ class AnswerController extends Controller
                     case 'Sun':
                         $exp->mg += 10;
                         break;
+                }
+                if ($exp->last_streak == null || Carbon::parse($exp->last_streak)->diffInDays(now()) === 1) {
+                    $user->streak += 1;
+                    $user->save();
+                    $exp->last_streak = now();
                 }
                 $exp->save();
             } else {

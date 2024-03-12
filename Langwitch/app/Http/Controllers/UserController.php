@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Experience;
 use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
 
 class UserController extends Controller
 {
@@ -70,14 +71,15 @@ class UserController extends Controller
                     $exp->jm = 0;
                     $exp->sb = 0;
                     $exp->mg = 0;
-                    $exp->save();
                 }
                 if (!$user->updated_at->isToday()) {
                     $user->live = 3;
                 }
-                if ($user->updated_at->diffInDays(now()) >= 1) {
+                if (Carbon::parse($exp->last_streak)->diffInDays(now()) > 1) {
                     $user->streak = 0;
+                    $exp->last_streak = null;
                 }
+                $exp->save();
                 $user->save();
                 return redirect('review')->with('success', 'Login berhasil');
             } else {

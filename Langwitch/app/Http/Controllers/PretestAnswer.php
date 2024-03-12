@@ -27,19 +27,25 @@ class PretestAnswer extends Controller
 
         switch ($score) {
             case 1:
+                $user->exp = 0;
                 $user->badge = 'Rookie';
                 break;
             case 2:
+                $user->exp = 700;
                 $user->badge = 'Magician';
                 break;
             case 3:
+                $user->exp = 2100;
                 $user->badge = 'Sorcerer';
                 break;
             case 4:
+                $user->exp = 4200;
                 $user->badge = 'Wizard';
                 break;
             default:
+                $user->exp = 0;
                 $user->badge = 'Rookie';
+                break;
         }
 
         $user->is_new = 0;
