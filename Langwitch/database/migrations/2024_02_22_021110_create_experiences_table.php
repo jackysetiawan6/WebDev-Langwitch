@@ -27,11 +27,10 @@ return new class extends Migration
         });
 
         DB::unprepared('
-            CREATE TRIGGER add_new_user_row AFTER INSERT ON users
+            CREATE TRIGGER add_new_experience_row AFTER INSERT ON users
             FOR EACH ROW
             BEGIN
-                INSERT INTO experiences (user_id, sn, sl, rb, km, jm, sb, mg, created_at, updated_at)
-                VALUES (NEW.id, 0, 0, 0, 0, 0, 0, 0, NOW(), NOW());
+                INSERT INTO experiences (user_id) VALUES (NEW.id);
             END;
         ');
     }

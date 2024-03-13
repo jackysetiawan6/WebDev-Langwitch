@@ -17,7 +17,9 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    box-shadow: 1.1px 1.1px 2.3px rgba(0, 0, 0, 0.048), 3.6px 3.6px 7.8px rgba(0, 0, 0, 0.072), 16px 16px 35px rgba(0, 0, 0, 0.12);
+    box-shadow: 1.1px 1.1px 2.3px rgba(0, 0, 0, 0.048),
+        3.6px 3.6px 7.8px rgba(0, 0, 0, 0.072),
+        16px 16px 35px rgba(0, 0, 0, 0.12);
     margin-top: 38px;
 }
 
@@ -41,7 +43,6 @@
 .jekin {
     text-decoration: none;
 }
-
 
 .jekball {
     color: #fff;
@@ -104,4 +105,8 @@
 
 .locked {
     filter: grayscale(1);
+}
+
+.jekball.completed img {
+    display: none;
 }

@@ -44,7 +44,7 @@
                 </div>
                 <div class="level-and-button">
                     <div class="level-per-level">
-                        <a href="testcoursefirst" class="jekball blobby1">
+                        <a href="testcoursefirst" class="jekball blobby1 completed">
                             1
                             <img src="../images/FullStar.svg" alt="">
                         </a>
