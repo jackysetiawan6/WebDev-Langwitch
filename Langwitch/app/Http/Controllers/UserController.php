@@ -105,6 +105,9 @@ class UserController extends Controller
         ]);
         $fullname = $request->input('fullname');
         $email = $request->input('email');
+        if (User::where('email', $email)->first()) {
+            return redirect()->back()->with('error', 'Email sudah terdaftar');
+        }
         $password = $request->input('password');
         $confirmation = $request->input('confirmation');
         if ($password != $confirmation) {

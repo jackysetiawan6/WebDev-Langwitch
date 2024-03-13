@@ -52,7 +52,7 @@
             </div>
             <p id="invalid-confirmation" class="invalid-input"></p>
             <progress max="100" value="0"></progress>
-            <button class="middle-button" type="submit" onclick="validate()">
+            <button class="middle-button" type="submit">
                 Daftar
             </button>
             <div class="middle-question">

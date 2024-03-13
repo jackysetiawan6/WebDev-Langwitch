@@ -263,30 +263,3 @@ function hide_password(input_id) {
     input.type = "password";
     eye.src = "images/EyeClosed.svg";
 }
-
-function validate() {
-    if (fullname_input.value === "") {
-        fullname_invalid.style.display = "block";
-        fullname_invalid.innerHTML = "Nama lengkap harus diisi.";
-        invalid_input(fullname);
-        return;
-    }
-    if (email_input.value === "") {
-        email_invalid.style.display = "block";
-        email_invalid.innerHTML = "Email harus diisi.";
-        invalid_input(email);
-        return;
-    }
-    if (password_input.value === "") {
-        password_invalid.style.display = "block";
-        password_invalid.innerHTML = "Password harus diisi.";
-        invalid_input(password);
-        return;
-    }
-    if (confirmation_input.value === "") {
-        confirmation_invalid.style.display = "block";
-        confirmation_invalid.innerHTML = "Konfirmasi password harus diisi.";
-        invalid_input(confirmation);
-        return;
-    }
-}

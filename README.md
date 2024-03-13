@@ -12,7 +12,8 @@ WebDev-Langwitch adalah sebuah website yang dibuat untuk memudahkan pengguna dal
 
 1. Soal belum di random.
 2. Nomor rank leaderboard belum diganti warna.
-3.
+3. Invalid email belum selesai.
+4. Star rating setelah ngerjain soal.
 
 ## Naming Standard
 

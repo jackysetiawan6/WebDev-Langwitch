@@ -1,24 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+#huge-container {
+    height: calc(100% - 70px);
+    width: calc(100% - 345px);
+    margin: 0;
+    padding: 0;
+    padding-top: 70px;
+}
 
 .title {
-    color: #060934;
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 800;
+    line-height: 44px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0 0 20px 40px;
 }
 
 .cont-leaderboard {
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 15px;
 }
 
 .leaderboard {
+    height: 70px;
+    display: flex;
     gap: 15px;
+    padding: 0 30px 0 20px;
+}
+
+.leaderboard.current {
+    background-color: #bf9fffa6;
+}
+
+.leaderboard.current.active {
+    background-color: #bf9fffaa;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .name {
-    color: #9167E3;
+    color: #9167e3;
     font-size: 24px;
     font-weight: 700;
 }
@@ -29,21 +56,35 @@
     font-weight: 700;
     display: flex;
     justify-content: space-between;
-
 }
 
 .experience {
-    color: #9167E3;
+    width: 200px;
+    color: #9167e3;
     font-size: 20px;
-    font-weight: 700;
-    text-align: end;
+    font-weight: 800;
+    line-height: 27px;
+    letter-spacing: 0em;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-bottom: 10px;
+}
+
+.medal {
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .id {
-    color: #060934;
+    color: #06093491;
     font-size: 32px;
-    font-weight: 700;
-    opacity: 56%;
+    font-weight: 800;
+    line-height: 44px;
+    letter-spacing: 0em;
+    text-align: center;
     display: flex;
     align-items: center;
     width: 45px;
@@ -55,14 +96,15 @@
     flex-direction: column;
 }
 
-.leaderboard {
-    display: flex;
-}
-
 .listed {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    height: 100%;
+    width: calc(100% - 200px);
 }
 
 .bordering {
-    border-bottom: 2px black solid;
+    border-bottom: 3px #232651a6 solid;
 }

@@ -16,7 +16,7 @@ class LeaderboardController extends Controller
         if ($user->is_new != -1) {
             return redirect('pretest')->with('error', 'Anda harus menyelesaikan pretest terlebih dahulu!');
         }
-        $data = User::all();
-        return view('papanskor', ['User' => $data]);
+        $data = User::orderBy('exp', 'desc')->get();
+        return view('papanskor', ['User' => $data, 'currentUser' => $user]);
     }
 }

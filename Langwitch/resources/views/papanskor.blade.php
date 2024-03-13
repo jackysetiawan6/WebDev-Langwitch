@@ -12,21 +12,31 @@
 <body>
     <div class="container">
         @include('sidebar')
-        <div class="container-content-bg">
+        <div class="container-content-bg" id="huge-container">
             <div class="cont-leaderboard">
                 <div class="bordering">
                     <p class="title">Papan Skor</p>
                 </div>
+                <?php $i = 1; ?>
                 @foreach ($User as $user)
-                <div class="leaderboard">
-                    <div class="id">{{ $user['id'] }}</div>
+                <div class="leaderboard {{$user->id == $currentUser->id ? 'current' : ''}}">
+                    @if ($i == 1)
+                    <div class="medal"><img src="{{ asset('images/MedalGold.svg') }}" alt=""></div>
+                    @elseif ($i == 2)
+                    <div class="medal"><img src="{{ asset('images/MedalSilver.svg') }}" alt=""></div>
+                    @elseif ($i == 3)
+                    <div class="medal"><img src="{{ asset('images/MedalBronze.svg') }}" alt=""></div>
+                    @else
+                    <div class="id">{{ $i }}</div>
+                    @endif
                     <div class="profile"><img src="{{ $user->avatar }}" alt=""></div>
                     <div class="listed">
                         <div class="name">{{ $user['fullname'] }}</div>
-                        <div class="classes">[{{ $user['badge'] }}] <p class="experience">{{ $user['exp'] }} XP</p>
-                        </div>
+                        <div class="classes">[{{ $user['badge'] }}]</div>
                     </div>
+                    <p class="experience">{{ $user['exp'] }} XP</p>
                 </div>
+                <?php $i++; ?>
                 @endforeach
             </div>
         </div>
