@@ -12,17 +12,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('completed_course', function (Blueprint $table) {
+        Schema::create('completed_courses', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->boolean('course_01')->default(false);
-            $table->boolean('course_02')->default(false);
-            $table->boolean('course_03')->default(false);
-            $table->boolean('course_04')->default(false);
-            $table->boolean('course_05')->default(false);
-            $table->boolean('course_06')->default(false);
-            $table->boolean('course_07')->default(false);
-            $table->boolean('course_08')->default(false);
+            $table->integer('course_01')->default(0);
+            $table->integer('course_02')->default(0);
+            $table->integer('course_03')->default(0);
+            $table->integer('course_04')->default(0);
+            $table->integer('course_05')->default(0);
+            $table->integer('course_06')->default(0);
+            $table->integer('course_07')->default(0);
+            $table->integer('course_08')->default(0);
             $table->timestamps();
         });
 
@@ -30,7 +30,7 @@ return new class extends Migration
             CREATE TRIGGER add_new_completed_row AFTER INSERT ON users
             FOR EACH ROW
             BEGIN
-                INSERT INTO completed_course (user_id) VALUES (NEW.id);
+                INSERT INTO completed_courses (user_id) VALUES (NEW.id);
             END;
         ');
     }

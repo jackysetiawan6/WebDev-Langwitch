@@ -6,6 +6,7 @@ use App\Charts\UserDailyEXP;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Experience;
+use App\Models\CompletedCourse;
 use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
 
@@ -35,7 +36,8 @@ class UserController extends Controller
         }
         $exp = Experience::where('user_id', $user->id)->first();
         $weekly = $exp->sn + $exp->sl + $exp->rb + $exp->km + $exp->jm + $exp->sb + $exp->mg;
-        return view('homecourse', ['user' => $user, 'weekly' => $weekly]);
+        $stars = CompletedCourse::where('user_id', $user->id)->first();
+        return view('homecourse', ['user' => $user, 'weekly' => $weekly, 'stars' => $stars]);
     }
     public function review()
     {

@@ -27,7 +27,7 @@
         @include('sidebar')
         <div class="container-content-bg">
             <div class="translator-container">
-                <h1 class="h1-mod">terjemahan</h1>
+                <h1 class="h1-mod">Terjemahan</h1>
                 <div class="translator">
                     <p class="slator-mod">Indonesia <img src="./images/exchange.png" alt="" class="slator-mod-img"> English</p>
                     <input type="text" id="inputTranslate" class="input-translate-mod" placeholder="Type to Translate">

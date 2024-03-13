@@ -51,12 +51,34 @@
     background-image: url(../images/StandPlace.svg);
     background-position: center;
     height: 120px;
+    width: 150px;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
     filter: drop-shadow(3px 3px 15px rgba(0, 0, 0, 0.15));
+    position: relative;
+}
+
+.jekball > img {
+    position: absolute;
+}
+
+.jekball > img:nth-child(1) {
+    bottom: 20px;
+    left: 25px;
+}
+
+.jekball > img:nth-child(2) {
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.jekball > img:nth-child(3) {
+    bottom: 20px;
+    right: 25px;
 }
 
 .level-per-level {
@@ -107,6 +129,6 @@
     filter: grayscale(1);
 }
 
-.jekball.completed img {
+.locked > img {
     display: none;
 }
