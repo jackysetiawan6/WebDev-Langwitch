@@ -14,11 +14,11 @@ class UserController extends Controller
     public function profile(UserDailyEXP $chart)
     {
         if (!session()->has('loginId')) {
-            return redirect('/login');
+            return redirect('/login')->with('error', 'Anda harus login terlebih dahulu!');
         }
         $user = User::find(session('loginId'));
         if ($user->is_new != -1) {
-            return redirect('pretest');
+            return redirect('pretest')->with('error', 'Anda harus menyelesaikan pretest terlebih dahulu!');
         }
         $exp = Experience::where('user_id', $user->id)->first();
         $weekly = $exp->sn + $exp->sl + $exp->rb + $exp->km + $exp->jm + $exp->sb + $exp->mg;
@@ -27,11 +27,11 @@ class UserController extends Controller
     public function homecourse()
     {
         if (!session()->has('loginId')) {
-            return redirect('/login');
+            return redirect('/login')->with('error', 'Anda harus login terlebih dahulu!');
         }
         $user = User::find(session('loginId'));
         if ($user->is_new != -1) {
-            return redirect('pretest');
+            return redirect('pretest')->with('error', 'Anda harus menyelesaikan pretest terlebih dahulu!');
         }
         $exp = Experience::where('user_id', $user->id)->first();
         $weekly = $exp->sn + $exp->sl + $exp->rb + $exp->km + $exp->jm + $exp->sb + $exp->mg;
@@ -40,11 +40,11 @@ class UserController extends Controller
     public function review()
     {
         if (!session()->has('loginId')) {
-            return redirect('/login');
+            return redirect('/login')->with('error', 'Anda harus login terlebih dahulu!');
         }
         $user = User::find(session('loginId'));
         if ($user->is_new != -1) {
-            return redirect('pretest');
+            return redirect('pretest')->with('error', 'Anda harus menyelesaikan pretest terlebih dahulu!');
         }
         return view('review', ['user' => $user]);
     }
@@ -83,7 +83,7 @@ class UserController extends Controller
                 $user->save();
                 return redirect('review')->with('success', 'Login berhasil');
             } else {
-                return redirect()->back()->with('error', 'Password salah');
+                return redirect()->back()->with('error', 'Kata sandi salah');
             }
         } else {
             return redirect()->back()->with('error', 'Email tidak terdaftar');
@@ -106,7 +106,7 @@ class UserController extends Controller
         $password = $request->input('password');
         $confirmation = $request->input('confirmation');
         if ($password != $confirmation) {
-            return redirect()->back()->with('error', 'Password dan konfirmasi password tidak sama');
+            return redirect()->back()->with('error', 'Kata sandi dan konfirmasi kata sandi tidak sama');
         }
         $user = new User;
         $user->fullname = $fullname;
@@ -126,6 +126,6 @@ class UserController extends Controller
     {
         session()->forget('loginId');
         session()->invalidate();
-        return redirect('/');
+        return redirect('/')->with('success', 'Logout berhasil');
     }
 }

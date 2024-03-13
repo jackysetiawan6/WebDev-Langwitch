@@ -7,8 +7,6 @@ use App\Models\Question;
 use App\Models\User;
 use App\Models\Experience;
 use Illuminate\Support\Facades\View;
-
-use function Laravel\Prompts\alert;
 use Carbon\Carbon;
 
 class AnswerController extends Controller
@@ -88,8 +86,7 @@ class AnswerController extends Controller
                 $user->live -= 1;
                 $user->save();
                 if ($user->live == 0) {
-                    alert('Game Over', 'You have no more lives left', 'error');
-                    return redirect()->route('homecourse');
+                    return redirect()->route('homecourse')->with('error', 'Nyawa anda habis! Silahkan coba lagi besok!');
                 }
             }
         }

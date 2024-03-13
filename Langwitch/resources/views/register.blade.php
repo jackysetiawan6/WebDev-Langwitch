@@ -14,6 +14,16 @@
         window.location.href = '/profile';
     </script>
     @endif
+    @if (session()->has('error'))
+    <script>
+        alert("{{ session('error') }}");
+    </script>
+    @endif
+    @if (session()->has('success'))
+    <script>
+        alert("{{ session('success') }}");
+    </script>
+    @endif
     <div class="container">
         <img src="{{ asset('images/Logo.svg') }}" alt="Logo" class="logo" />
         <form class="middle" action="{{ route('register-success') }}" method="POST">

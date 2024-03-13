@@ -49,6 +49,7 @@ class PretestAnswer extends Controller
         }
 
         $user->is_new = 0;
+        $user->streak = 1;
         $user->save();
 
         return redirect('pretest');

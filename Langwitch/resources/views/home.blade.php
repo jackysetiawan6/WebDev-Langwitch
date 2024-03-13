@@ -14,6 +14,16 @@
         window.location.href = '/homecourse';
     </script>
     @endif
+    @if (session()->has('error'))
+    <script>
+        alert("{{ session('error') }}");
+    </script>
+    @endif
+    @if (session()->has('success'))
+    <script>
+        alert("{{ session('success') }}");
+    </script>
+    @endif
     @include('navbar')
     <div class="home">
         <div class="home-container-1">

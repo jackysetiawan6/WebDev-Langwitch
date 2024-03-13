@@ -11,11 +11,11 @@ class PretestController extends Controller
     function show()
     {
         if (!session('loginId')) {
-            return redirect('login');
+            return redirect('login')->with('error', 'Anda harus login terlebih dahulu!');
         }
         $user = User::where('id', session('loginId'))->first();
         if ($user->is_new == -1) {
-            return redirect('homecourse');
+            return redirect('homecourse')->with('success', 'Anda telah menyelesaikan pretest!');
         }
         $data = Pretest::all();
         return view('pretest', ['pretest' => $data, 'user' => $user]);
@@ -28,6 +28,6 @@ class PretestController extends Controller
         $user->save();
 
         // dd($user->is_new);
-        return redirect('homecourse');
+        return redirect('homecourse')->with('success', 'Selamat! Anda telah menyelesaikan pretest!');
     }
 }

@@ -11,14 +11,14 @@ class QuestionController extends Controller
     function show()
     {
         if (!session()->has('loginId')) {
-            return redirect('/login');
+            return redirect('/login')->with('error', 'Anda harus login terlebih dahulu!');
         }
         $user = User::find(session('loginId'));
         if ($user->is_new != -1) {
-            return redirect('pretest');
+            return redirect('pretest')->with('error', 'Anda harus menyelesaikan pretest terlebih dahulu!');
         }
         if ($user->live == 0) {
-            return redirect('homecourse');
+            return redirect('homecourse')->with('error', 'Anda harus menyelesaikan pretest terlebih dahulu!');
         }
         $data = Question::paginate(1);
         return view('testcoursefirst', ['Question' => $data]);
