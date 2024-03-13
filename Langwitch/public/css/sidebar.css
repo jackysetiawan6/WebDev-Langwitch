@@ -107,13 +107,88 @@ body {
     border-color: #fff;
 }
 
-.active a p {
+.active .course-subtitle-2 {
+    transition: 1000ms ease-in-out;
+    background-color: #2D1F53;
+}
+
+.active h1 {
+    transition: 1000ms ease-in-out;
+    color: #fff;
+}
+
+.active p {
     transition: 1000ms ease-in-out;
     color: #fff;
 }
 
 .list-sidebar ul li a img {
     padding-left: 30px;
+}
+
+.active a p {
+    transition: 1000ms ease-in-out;
+    color: #fff;
+}
+
+.active .experience {
+    transition: 1000ms ease-in-out;
+    color: #9167E3;
+}
+
+.active .post-panel {
+    transition: 1000ms ease-in-out;
+    background-color: #2D1F53;
+}
+
+.active .container-review {
+    transition: 1000ms ease-in-out;
+    background-color: #2D1F53;
+}
+
+.active .classes {
+    transition: 1000ms ease-in-out;
+    color: #fff;
+}
+
+.active .fullname {
+    transition: 1000ms ease-in-out;
+    color: #fff;
+}
+
+.active .email {
+    transition: 1000ms ease-in-out;
+    color: #fff;
+}
+
+.active .panel {
+    transition: 1000ms ease-in-out;
+    background-color: #2D1F53;
+}
+
+.active .cricketbutter {
+    transition: 1000ms ease-in-out;
+    color: #fff;
+}
+
+.active .title {
+    transition: 1000ms ease-in-out;
+    color: #fff;
+}
+
+.active .profile-name .profile-rank {
+    transition: 1000ms ease-in-out;
+    color: #fff;
+}
+
+.active .button-post {
+    transition: 1000ms ease-in-out;
+    background: #4A3092;
+}
+
+.active .profile-time {
+    transition: 1000ms ease-in-out;
+    color: #fff;
 }
 
 .exit-sidebar li a img {
@@ -190,4 +265,13 @@ body {
 .container-content-bg.active {
     background-color: var(--dark-bg);
     transition: 800ms ease-in-out;
+}
+
+body.no-transition * {
+    transition: none !important;
+}
+
+.active .super-container {
+    transition: 1000ms ease-in-out;
+    background-color: #2D1F53;
 }

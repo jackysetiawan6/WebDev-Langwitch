@@ -14,28 +14,38 @@ const nightmodecoursetext2 = document.querySelector('.course-subtitle-2 p')
 
 const nightmodetitle = document.querySelector('.course-page p');
 const nightmodetitle2 = document.querySelector('.super-title h1');
-const handleModeToggle = () => {
-    darkModeElement.classList.toggle('active');
-    darkmodesidebar.classList.toggle('active');
-    nightmodecourse.classList.toggle('active');
-    nightmodecourse2.classList.toggle('active');
-    nightmodecoursetext.classList.toggle('active');
-    nightmodecoursetext2.classList.toggle('active');
-    nightmodetitle.classList.toggle('active');
-    nightmodetitle2.classList.toggle('active');
-    modeToggleElements.forEach((element) => element.classList.toggle('active'));
-    exittext.classList.toggle('active');
-    if (!sideBar[0].classList('active')) {
-        sideBar.forEach((el) => {
-            el.classList.add('active');
-        })
-    } else {
-        sideBar.forEach((el) => {
-            console.log(el);
-            el.classList.remove('active');
-        })
-    }
 
+const handleModeToggle = () => {
+    const isDarkMode = darkModeElement.classList.contains('active');
+    localStorage.setItem('darkMode', !isDarkMode);
+    applyDarkMode(!isDarkMode);
+};
+
+const applyDarkMode = (isDarkMode) => {
+    document.body.classList.add('no-transition'); // Add class to disable transition
+    darkModeElement.classList.toggle('active', isDarkMode);
+    darkmodesidebar.classList.toggle('active', isDarkMode);
+    nightmodecourse.classList.toggle('active', isDarkMode);
+    nightmodecourse2.classList.toggle('active', isDarkMode);
+    nightmodecoursetext.classList.toggle('active', isDarkMode);
+    nightmodecoursetext2.classList.toggle('active', isDarkMode);
+    nightmodetitle.classList.toggle('active', isDarkMode);
+    nightmodetitle2.classList.toggle('active', isDarkMode);
+    modeToggleElements.forEach((element) => element.classList.toggle('active', isDarkMode));
+    exittext.classList.toggle('active', isDarkMode);
+    sideBar.forEach((el) => {
+        el.classList.toggle('active', isDarkMode);
+    });
+    // Remove transition after a delay to allow for smooth transition during toggle
+    setTimeout(() => {
+        document.body.classList.remove('no-transition');
+    }, 300);
 };
 
 modeToggleElements.forEach((element) => element.addEventListener('click', handleModeToggle));
+
+// Check if dark mode is stored in localStorage
+const storedDarkMode = localStorage.getItem('darkMode');
+if (storedDarkMode !== null) {
+    applyDarkMode(storedDarkMode === 'true');
+}
