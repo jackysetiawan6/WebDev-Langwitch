@@ -44,31 +44,16 @@
                 </div>
                 <div class="level-and-button">
                     <div class="level-per-level">
-                        <a href="testcoursefirst" class="jekball blobby1">
-                            1
-                            <img src="../images/FullStar.svg" alt="">
-                        </a>
-                        <a href="" class="jekball blobby2 locked">
-                            2
-                        </a>
-                        <a href="" class="jekball blobby3 locked">
-                            3
-                        </a>
-                        <a href="" class="jekball blobby4 locked">
-                            4
-                        </a>
-                        <a href="" class="jekball blobby5 locked">
-                            5
-                        </a>
-                        <a href="" class="jekball blobby6 locked">
-                            6
-                        </a>
-                        <a href="" class="jekball blobby7 locked">
-                            7
-                        </a>
-                        <a href="" class="jekball blobby8 locked">
-                            8
-                        </a>
+                        <?php $isUnlocked = true; ?>
+                        @for ($i = 1; $i <= 8; $i++) <a href="testcoursefirst" class="jekball blobby{{$i}} {{ !$isUnlocked ? 'locked' : '' }}">
+                            {{ $i }}
+                            @for ($j = 1; $j <= 3; $j++) <?php
+                                                            $courseProperty = "course_" . str_pad($i, 2, '0', STR_PAD_LEFT);
+                                                            $isUnlocked = isset($stars->$courseProperty) && $stars->$courseProperty == 3;
+                                                            $isColored = isset($stars->$courseProperty) && $j <= $stars->$courseProperty;
+                                                            echo '<img src="../images/FullStar.svg" alt="" style="filter: grayscale(' . ($isColored ? '0' : '1') . ')">';
+                                                            ?> @endfor </a>
+                                @endfor
                     </div>
                     <a href="review" class="jekin">
                         <div class="container-review">
