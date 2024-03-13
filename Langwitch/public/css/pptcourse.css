@@ -25,3 +25,7 @@
     border-radius: 50%;
     cursor: pointer;
 }
+
+.super-container-ppt {
+    height: 100vh;
+}

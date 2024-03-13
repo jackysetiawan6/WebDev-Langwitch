@@ -56,7 +56,7 @@
 
 .exp-stats {
     display: flex;
-    background-color: #EBE0FF;
+    background: linear-gradient(316deg, #ac82ff, transparent);
     width: 263px;
     height: 146px;
     border-radius: 30px;
