@@ -98,20 +98,20 @@ class UserController extends Controller
     public function register_user(Request $request)
     {
         $request->validate([
-            'fullname' => 'required',
-            'email' => 'required|unique:users',
-            'password' => 'required',
+            'fullname' => 'required|min:3|max:255|regex:/^[a-zA-Z ]+$/u',
+            'email' => 'required|unique:users|email:rfc,dns',
+            'password' => 'required|min:8|max:255',
             'confirmation' => 'required',
         ]);
         $fullname = $request->input('fullname');
         $email = $request->input('email');
         if (User::where('email', $email)->first()) {
-            return redirect()->back()->with('error', 'Email sudah terdaftar');
+            return redirect('/register')->with('error', 'Email sudah terdaftar');
         }
         $password = $request->input('password');
         $confirmation = $request->input('confirmation');
         if ($password != $confirmation) {
-            return redirect()->back()->with('error', 'Kata sandi dan konfirmasi kata sandi tidak sama');
+            return redirect('/register')->with('error', 'Kata sandi dan konfirmasi kata sandi tidak sama');
         }
         $user = new User;
         $user->fullname = $fullname;
@@ -124,7 +124,7 @@ class UserController extends Controller
             $request->session()->put('loginId', $user->id);
             return redirect('/pretest')->with('success', 'Akun berhasil dibuat');
         } else {
-            return redirect()->back()->with('error', 'Akun gagal dibuat');
+            return redirect('/register')->with('error', 'Akun gagal dibuat');
         }
     }
     public function logout_user()

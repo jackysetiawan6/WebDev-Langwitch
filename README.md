@@ -11,9 +11,9 @@ WebDev-Langwitch adalah sebuah website yang dibuat untuk memudahkan pengguna dal
 ## TODO
 
 1. Soal belum di random.
-2. Nomor rank leaderboard belum diganti warna.
-3. Invalid email belum selesai.
-4. Star rating setelah ngerjain soal.
+2. Invalid email belum selesai.
+3. Star rating setelah ngerjain soal.
+4. Cek ulang dark mode di semua halaman.
 
 ## Naming Standard
 

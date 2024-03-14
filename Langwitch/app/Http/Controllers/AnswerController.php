@@ -22,6 +22,10 @@ class AnswerController extends Controller
     {
         $answers = $request->input('answers');
 
+
+        if ($answers === null) {
+            return redirect()->back()->with('error', 'No answers provided!');
+        }
         $correctAnswers = Question::whereIn('exercise_id', array_keys($answers))
             ->pluck('correct_opt', 'exercise_id')
             ->toArray();
