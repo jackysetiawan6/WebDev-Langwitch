@@ -17,4 +17,5 @@ if (localStorage.getItem('darkMode') === 'true') {
         darkModeElementppt.style.backgroundColor = '#1D1533';
 
     }
+
 }
