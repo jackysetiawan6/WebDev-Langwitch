@@ -275,3 +275,12 @@ body.no-transition * {
     transition: 1000ms ease-in-out;
     background-color: #2D1F53;
 }
+
+.active .leaderboard {
+    transition: 1000ms ease-in-out;
+    background-color: #251945;
+}
+
+.active .mplek {
+    background-color: #987FC5;
+}

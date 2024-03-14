@@ -176,3 +176,7 @@ input[type="radio"]:checked+.radio-text {
     background-color: #9167E3;
     color: #fff;
 }
+
+#title-cont.active {
+    color: #fff;
+}
