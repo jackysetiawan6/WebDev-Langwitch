@@ -7,9 +7,19 @@
         <title>Langwitch - Learn languages by yourself</title>
         <link rel="shortcut icon" href="{{ asset('images/Logo.svg') }}" type="image/x-icon" />
         <link rel="stylesheet" href="{{ asset('css/testcoursefirst.css') }}">
+
+        {{-- <style>
+            /* .active #soal-course {
+                color: #fff;
+            } */
+
+            .active #title-cont {
+                color: #fff;
+            }
+        </style> --}}
     </head>
 
-    <body>`
+    <body>
         <div class="super-container">
             @if (!session()->has('loginId'))
                 <script>
@@ -75,7 +85,20 @@
                 @endif
             </div>
         </div>
-        <script src="{{ asset('js/testcoursefirst.js') }}"></script>
+        {{-- <script src="{{ asset('js/testcoursefirst.js') }}"></script> --}}
+
     </body>
+    {{-- <script>
+        // Check if dark mode is enabled
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+        // Get the title container element
+        const titleContainer = document.getElementById('title-cont');
+
+        // If dark mode is enabled, add the 'active' class to the title container
+        if (isDarkMode) {
+            titleContainer.classList.add('active');
+        }
+    </script> --}}
 
 </html>
