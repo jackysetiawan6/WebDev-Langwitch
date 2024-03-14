@@ -20,7 +20,7 @@ class QuestionController extends Controller
         if ($user->live == 0) {
             return redirect('homecourse')->with('error', 'Anda harus menyelesaikan pretest terlebih dahulu!');
         }
-        $data = Question::limit(5)->paginate(1);
+        $data = Question::paginate(1);
         return view('testcoursefirst', ['Question' => $data, 'currentUser' => $user]);
     }
 }

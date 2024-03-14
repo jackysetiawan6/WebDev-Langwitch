@@ -63,19 +63,6 @@
                 </div>
             </form>
 
-            <?php $countQuestions = count($Question); ?>
-            <script>
-                function doneButtonClicked() {
-                    var countQuestions = <?php echo $countQuestions; ?>;
-                    var radios = document.querySelectorAll('input[type=radio]:checked');
-                    if (radios.length < countQuestions) {
-                        alert("Please answer all the questions before proceeding.");
-                    } else {
-                        window.location.href = 'course';
-                    }
-                }
-            </script>
-
             @if (isset($results))
             <div class="results">
                 <h2>Results:</h2>
@@ -84,6 +71,34 @@
                 @endforeach
             </div>
             @endif
+
+            <?php $countQuestions = count($Question); ?>
+            <script>
+                function doneButtonClicked() {
+                    var countQuestions = <?php echo $countQuestions; ?>;
+                    var radios = document.querySelectorAll('input[type=radio]:checked');
+                    if (radios.length < countQuestions) {
+                        alert("Please answer all the questions before proceeding.");
+                    } else {
+                        <?php
+
+                        use App\Models\CompletedCourse;
+
+                        $currentRow = CompletedCourse::where('user_id', session('loginId'))->first();
+                        if (session('correctCount') >= 19)
+                            $currentRow->course_01 = max(3, $currentRow->course_01);
+                        else if (session('correctCount') >= 10)
+                            $currentRow->course_01 = max(2, $currentRow->course_01);
+                        else if (session('correctCount') >= 5)
+                            $currentRow->course_01 = max(1, $currentRow->course_01);
+                        else
+                            $currentRow->course_01 = max(0, $currentRow->course_01);
+                        $currentRow->save();
+                        ?>
+                        window.location.href = 'homecourse';
+                    }
+                }
+            </script>
         </div>
     </div>
     {{-- <script src="{{ asset('js/testcoursefirst.js') }}"></script> --}}

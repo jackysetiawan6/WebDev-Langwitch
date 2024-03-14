@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 .super-container {
     height: 100vh;
@@ -10,7 +10,7 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
 }
 
 .container-course-first {
@@ -26,7 +26,7 @@
 }
 
 nav {
-    background-color: #F0E9FF;
+    background-color: #f0e9ff;
     border-radius: 5px;
     justify-content: space-around;
     align-items: center;
@@ -54,13 +54,8 @@ nav {
     align-items: center;
 } */
 
-.page-link:active {
-    background-color: #342265;
-    color: #FFFFFF;
-}
-
 .page-link {
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 32px;
     background-color: rgba(52, 34, 101, 0.2);
     border-radius: 10px;
@@ -74,10 +69,14 @@ nav {
     cursor: pointer;
 }
 
-
 .page-link {
-    color: #FFFFFF;
+    color: #ffffff;
     text-decoration: none;
+}
+
+.page-item.active > .page-link {
+    background-color: #342265;
+    color: #ffffff;
 }
 
 .soal-course-first {
@@ -123,8 +122,8 @@ nav {
 }
 
 .activator:active {
-    background-color: #9167E3;
-    color: #FFFFFF;
+    background-color: #9167e3;
+    color: #ffffff;
 }
 
 .button-answer {
@@ -134,7 +133,7 @@ nav {
 }
 
 .answer-the-question {
-    color: #FFFFFF;
+    color: #ffffff;
     background-color: #342265;
     border-radius: 30px;
     /* padding: 11px 0; */
@@ -149,19 +148,17 @@ nav {
     cursor: pointer;
 }
 
-
 input[type="radio"] {
     visibility: hidden;
     height: 0;
     width: 0;
 }
 
-
 .radio-text {
     background-color: #fff;
-    border: #9167E3 1px solid;
+    border: #9167e3 1px solid;
     border-radius: 30px;
-    color: #9167E3;
+    color: #9167e3;
     padding: 11px 0;
     width: 100%;
     font-size: 24px;
@@ -172,8 +169,8 @@ input[type="radio"] {
     cursor: pointer;
 }
 
-input[type="radio"]:checked+.radio-text {
-    background-color: #9167E3;
+input[type="radio"]:checked + .radio-text {
+    background-color: #9167e3;
     color: #fff;
 }
 

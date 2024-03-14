@@ -14,7 +14,7 @@ class AnswerController extends Controller
     public function showQuestions(Request $request)
     {
         $currentPage = $request->input('page', 1);
-        $data = Question::limit(5)->paginate(1, ['*'], 'page', $currentPage);
+        $data = Question::paginate(1, ['*'], 'page', $currentPage);
         return View::make('testcoursefirst', ['Question' => $data, 'currentPage' => $currentPage]);
     }
 
@@ -84,7 +84,11 @@ class AnswerController extends Controller
                     $user->save();
                     $exp->last_streak = now();
                 }
-                $exp->save();
+                if (session()->has('correctCount')) {
+                    session()->put('correctCount', session('correctCount') + 1);
+                } else {
+                    session()->put('correctCount', 1);
+                }
             } else {
                 $user->live -= 1;
                 $user->save();
@@ -96,7 +100,6 @@ class AnswerController extends Controller
 
         $currentPage = $request->input('page', 1);
         $nextPage = $currentPage + 1;
-
         return redirect()->route('show_questions', ['page' => $nextPage])->with('results', $results);
 
         // For demonstration purposes, let's just dump the results to the console
