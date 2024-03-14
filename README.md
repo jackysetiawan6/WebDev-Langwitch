@@ -10,8 +10,10 @@ WebDev-Langwitch adalah sebuah website yang dibuat untuk memudahkan pengguna dal
 
 ## TODO
 
-1. Soal belum di random.
+1. Soal belum dilimit and random.
 2. Cek ulang dark mode di semua halaman.
+3. Streak bermasalah pada beberapa case.
+4. Cek ulang fitur-fitur yang ada.
 
 ## Naming Standard
 
