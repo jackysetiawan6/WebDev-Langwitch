@@ -26,10 +26,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-// Route::get('/translate', function () {
-//     $tr = new GoogleTranslate('en'); // Translates into Engli
-//     return $tr->setSource('id')->setTarget('en')->translate('Aku suka makan');
-// });
 Route::get('/translate', function () {
     if (isset($_GET['text'])) {
         $inputText = $_GET['text'];
@@ -47,14 +43,7 @@ Route::get('/course', function () {
     return view('course');
 });
 
-// sidebar linker
-
-Route::get('/review', function () {
-    return view('review');
-});
 Route::get('/review', [UserController::class, 'review']);
-
-// review linker
 
 Route::get('/videocourse', function () {
     return view('videocourse');
@@ -66,28 +55,12 @@ Route::get('/pptcourse', function () {
 
 Route::get('/homecourse', [UserController::class, 'homecourse'])->name('homecourse');
 
-// end of review linker
-
-Route::get('/papanskor', function () {
-    return view('papanskor');
-});
-
 Route::get('/profile', [UserController::class, 'profile']);
 Route::get('/update-status', [PretestController::class, 'updateStatus'])->name('update-status');
 
 Route::get('/terjemahan', function () {
     return view('translate');
 });
-// end of sidebar linker
-
-
-// course linker
-
-Route::get('/testcoursefirst', function () {
-    return view('testcoursefirst');
-});
-
-// end of course linker
 
 Route::get('/login', [UserController::class, 'login']);
 Route::post('/login-success', [UserController::class, 'login_user'])->name('login-success');
@@ -103,17 +76,11 @@ Route::get('/diskusi', [DiscussionController::class, 'index'])->name('diskusi-sh
 
 Route::post('/diskusistore', [DiscussionController::class, 'store'])->name('diskusi-store');
 
-// Route::get('question', [QuestionController::class, 'showtext']);
-
-// Route::get('question-show', [QuestionController::class, 'questionshow'])->name('question-show');
-
-// Route::post('question-store', [QuestionController::class, 'questionstore'])->name('question-store');
 Route::get('testcoursefirst', [QuestionController::class, 'show']);
-// routes/web.php
 
 Route::get('/show-questions', [AnswerController::class, 'showQuestions'])->name('show_questions');
 Route::post('/submit-answers', [AnswerController::class, 'submitAnswers'])->name('submit_answers');
-// Example route definition
+
 Route::get('pretest', [PretestController::class, 'show']);
 Route::get('/show-questions-pretest', [PretestAnswer::class, 'showQuestions'])->name('show_questions_pretest');
 Route::post('/submit-answers-pretest', [PretestAnswer::class, 'submitAnswers'])->name('submit_answers_pretest');

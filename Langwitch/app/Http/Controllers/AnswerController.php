@@ -14,14 +14,13 @@ class AnswerController extends Controller
     public function showQuestions(Request $request)
     {
         $currentPage = $request->input('page', 1);
-        $data = Question::paginate(1, ['*'], 'page', $currentPage);
+        $data = Question::limit(5)->paginate(1, ['*'], 'page', $currentPage);
         return View::make('testcoursefirst', ['Question' => $data, 'currentPage' => $currentPage]);
     }
 
     public function submitAnswers(Request $request)
     {
         $answers = $request->input('answers');
-
 
         if ($answers === null) {
             return redirect()->back()->with('error', 'No answers provided!');

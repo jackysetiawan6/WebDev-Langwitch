@@ -45,7 +45,7 @@
                 <div class="level-and-button">
                     <div class="level-per-level">
                         <?php $isUnlocked = true; ?>
-                        @for ($i = 1; $i <= 9; $i++) <a href="testcoursefirst" class="jekball blobby{{$i}} {{ !$isUnlocked ? 'locked' : '' }}">
+                        @for ($i = 1; $i <= 9; $i++) <a href="course" class="jekball blobby{{$i}} {{ !$isUnlocked ? 'locked' : '' }}">
                             @if ($i % 5 == 0)
                             <div class="checkpoint01"></div>
                             <div class="checkpoint02"></div>
